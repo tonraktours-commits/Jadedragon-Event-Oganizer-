@@ -1,356 +1,112 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jadedragon Event Organizer — Event, Creative, Production. ออกแบบและจัดงานครบวงจร ตั้งแต่แนวคิดจนถึงวันงาน">
-  <title>Jadedragon Event Organizer | Event • Creative • Production</title>
-  <meta property="og:title" content="Jadedragon Event Organizer">
-  <meta property="og:description" content="Event • Creative • Production — We Create Experiences.">
-  <meta property="og:type" content="website">
-  <style>
-    :root{
-      --bg:#08090b;--panel:#101216;--panel2:#15181d;--line:#252931;
-      --text:#f6f7f8;--muted:#a5aab3;--accent:#e31822;--accent2:#ff454d;
-      --max:1180px;--radius:24px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Noto Sans Thai","Segoe UI",sans-serif}
-    a{color:inherit;text-decoration:none}
-    button,input,select,textarea{font:inherit}
-    img{max-width:100%;display:block}
-    .wrap{max-width:var(--max);margin:auto;padding:0 24px}
-    .nav{position:fixed;z-index:100;top:0;left:0;right:0;background:rgba(8,9,11,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .navin{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
-    .brand img{width:42px;height:42px;border-radius:11px}
-    .brand strong{letter-spacing:.09em;font-size:14px}
-    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.14em;margin-top:2px}
-    .links{display:flex;align-items:center;gap:22px;font-size:13px;color:#d5d8dd}
-    .actions{display:flex;align-items:center;gap:10px}
-    .btn{border:1px solid #383d46;border-radius:999px;padding:12px 18px;background:transparent;color:#fff;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
-    .btn.primary{background:var(--accent);border-color:var(--accent)}
-    .btn.primary:hover{background:var(--accent2)}
-    .lang{padding:9px 12px;font-size:12px}
-    .hero{min-height:720px;display:grid;align-items:end;padding:150px 0 76px;position:relative;overflow:hidden}
-    .hero:before{content:"";position:absolute;inset:0;background:
-      linear-gradient(90deg,rgba(5,6,8,.96) 0%,rgba(5,6,8,.82) 46%,rgba(5,6,8,.24) 100%),
-      linear-gradient(0deg,#08090b 0%,transparent 30%),
-      url("hero.jpg") center/cover no-repeat;transform:scale(1.02)}
-    .hero .wrap{position:relative;width:100%}
-    .eyebrow{font-size:12px;letter-spacing:.18em;color:#b9bdc5;text-transform:uppercase}
-    h1{font-size:clamp(52px,8vw,110px);line-height:.87;letter-spacing:-.055em;margin:20px 0 24px;max-width:860px}
-    h1 span{color:var(--accent)}
-    .lead{max-width:700px;color:#d1d4da;font-size:18px;line-height:1.7}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:54px}
-    .stat{border-top:1px solid #393d44;padding-top:18px}
-    .stat b{font-size:24px}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
-    section{padding:96px 0}
-    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
-    .section-head h2{font-size:clamp(34px,5vw,62px);line-height:1;margin:10px 0 0;letter-spacing:-.04em}
-    .section-head p{color:var(--muted);max-width:520px;line-height:1.7;margin:0}
-    .grid{display:grid;gap:16px}
-    .services{grid-template-columns:repeat(4,1fr)}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-height:220px;transition:.25s}
-    .card:hover{transform:translateY(-4px);border-color:#464b55}
-    .num{font-size:12px;color:var(--accent);letter-spacing:.12em}
-    .card h3{font-size:22px;margin:34px 0 12px}
-    .card p{color:var(--muted);line-height:1.65;margin:0;font-size:14px}
-    .portfolio-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-    .chip{border:1px solid #30343c;background:#111317;color:#cdd1d8;padding:9px 13px;border-radius:999px;cursor:pointer;font-size:12px}
-    .chip.active{background:#fff;color:#08090b;border-color:#fff}
-    .projects{grid-template-columns:repeat(2,1fr)}
-    .project{position:relative;min-height:420px;border-radius:28px;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:#111}
-    .project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
-    .project:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(5,6,8,.92) 100%)}
-    .project-copy{position:absolute;z-index:2;left:24px;right:24px;bottom:24px}
-    .project-copy small{color:#ddd}.project-copy h3{font-size:30px;margin:7px 0}.project-copy p{color:#bbb;margin:0}
-    .case{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:28px}
-    .case img{border-radius:22px;aspect-ratio:4/3;object-fit:cover;width:100%}
-    .case h3{font-size:38px;margin:10px 0 14px}
-    .case ul{padding-left:20px;color:#c9cdd4;line-height:1.8}
-    .production{grid-template-columns:repeat(3,1fr)}
-    .production .card{min-height:180px}
-    .brief{display:grid;grid-template-columns:.8fr 1.2fr;gap:34px}
-    .brief-note{padding:32px;background:linear-gradient(150deg,#181b20,#0d0f12);border:1px solid var(--line);border-radius:28px}
-    .brief-note h3{font-size:38px;margin:10px 0 14px}
-    .brief-note p{color:var(--muted);line-height:1.7}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:28px}
-    label{font-size:12px;color:#cdd1d7;display:grid;gap:7px}
-    input,select,textarea{width:100%;background:#0b0d10;border:1px solid #30343d;border-radius:13px;padding:13px 14px;color:#fff;outline:none}
-    textarea{min-height:120px;resize:vertical}
-    .full{grid-column:1/-1}
-    .contact-grid{grid-template-columns:repeat(3,1fr)}
-    .contact-box{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:26px}
-    .contact-box h3{margin:0 0 9px}.contact-box p{color:var(--muted);margin:0 0 18px;line-height:1.6}
-    .phase{background:#f2f3f4;color:#111;border-radius:32px;padding:34px;display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:center}
-    .phase h2{font-size:46px;line-height:1;margin:0 0 14px}
-    .pipeline{display:flex;flex-wrap:wrap;gap:8px}
-    .pipeline span{background:#fff;border:1px solid #d8dadd;border-radius:999px;padding:10px 13px;font-size:12px}
-    footer{padding:36px 0 48px;color:#8e949d;border-top:1px solid var(--line);font-size:12px}
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
-    .modal.open{display:flex}.modal-box{max-width:760px;width:100%;background:#101216;border:1px solid #333842;border-radius:28px;padding:30px;max-height:88vh;overflow:auto}
-    .modal-close{float:right;background:#202329;border:0;color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer}
-    .notice{display:none;margin-top:12px;padding:12px 14px;border-radius:12px;background:#102218;color:#9fe2b6;font-size:13px}
-    @media(max-width:950px){
-      .links{display:none}.services{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}
-      .case,.brief,.phase{grid-template-columns:1fr}.production,.contact-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}
-    }
-    @media(max-width:580px){
-      .wrap{padding:0 18px}.brand{min-width:auto}.brand small{display:none}.actions .lang{display:none}
-      .hero{min-height:690px;padding-bottom:52px}.lead{font-size:16px}.services{grid-template-columns:1fr}
-      section{padding:72px 0}.section-head{display:block}.section-head p{margin-top:16px}
-      form{grid-template-columns:1fr}.full{grid-column:auto}.stats{grid-template-columns:1fr 1fr}
-      .project{min-height:350px}.case h3{font-size:31px}.phase h2{font-size:36px}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Jadedragon Event Organizer — Event, Creative & Production. Full-service event management, concerts, government events, live streaming and production.">
+<title>Jadedragon Event Organizer | Event • Creative • Production</title>
+<style>
+:root{--bg:#08090b;--panel:#111318;--line:#292d35;--text:#f7f7f8;--muted:#a1a7b2;--red:#ff3045;--max:1220px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Noto Sans Thai",Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{max-width:var(--max);margin:auto;padding:0 24px}
+.nav{position:fixed;inset:0 0 auto;z-index:50;background:rgba(8,9,11,.84);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+.navin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px}.mark{width:42px;height:42px;border:1px solid #555;border-radius:50%;display:grid;place-items:center;font-weight:900}.mark span{color:var(--red)}
+.brandtext b{letter-spacing:.07em}.brandtext small{display:block;color:var(--muted);font-size:10px;letter-spacing:.16em}
+.links{display:flex;gap:25px;font-size:13px}.links a:hover{color:var(--red)}
+.actions{display:flex;gap:9px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border:1px solid #3a3d45;border-radius:999px;font-weight:800;font-size:13px;cursor:pointer}.btn.red{background:var(--red);border-color:var(--red)}.btn:hover{transform:translateY(-1px)}
+.hero{min-height:100vh;display:flex;align-items:end;position:relative;background:
+linear-gradient(90deg,rgba(7,8,10,.97) 0%,rgba(7,8,10,.82) 42%,rgba(7,8,10,.28) 72%,rgba(7,8,10,.58) 100%),
+linear-gradient(0deg,rgba(7,8,10,.92) 0%,transparent 45%),
+url("assets/hero.jpg") center/cover no-repeat}
+.heroin{padding:150px 24px 70px;max-width:var(--max);margin:auto;width:100%}.eyebrow{font-size:12px;letter-spacing:.24em;color:#d5d8df;font-weight:800}.hero h1{font-size:clamp(48px,8vw,98px);line-height:.92;margin:18px 0 22px;letter-spacing:-.055em;max-width:840px}.hero h1 em{font-style:normal;color:var(--red)}.hero p{max-width:760px;color:#d5d8df;font-size:17px}.heroBtns{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:65px;border-top:1px solid rgba(255,255,255,.23)}.kpi{padding:18px 20px 0 0}.kpi b{font-size:21px}.kpi small{display:block;color:var(--muted)}
+section{padding:95px 0}.sectionHead{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;margin-bottom:38px}.sectionHead h2{font-size:clamp(35px,5vw,62px);line-height:1;margin:8px 0}.sectionHead p{color:var(--muted);margin:0}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.service{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;min-height:210px}.num{color:var(--red);font-weight:900;font-size:12px}.service h3{font-size:22px;margin:28px 0 8px}.service p{color:var(--muted);font-size:14px}
+.workgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:13px}.work{position:relative;min-height:360px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#111}.work img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.work:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9),rgba(0,0,0,.06) 65%)}.worktext{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}.worktext small{color:#d1d5dc}.worktext h3{font-size:27px;margin:4px 0}.span7{grid-column:span 7}.span5{grid-column:span 5}.span4{grid-column:span 4}.span8{grid-column:span 8}
+.case{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.caseVisual{border-radius:20px;overflow:hidden;min-height:560px}.caseVisual img{width:100%;height:100%;object-fit:cover}.caseInfo{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:32px}.caseInfo h3{font-size:38px;line-height:1.05}.caseInfo p{color:var(--muted)}.caseStats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}.caseStat{border-top:1px solid #343840;padding-top:13px}.caseStat b{font-size:21px}.caseStat small{display:block;color:var(--muted)}
+.process{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.step{border-top:2px solid #343840;padding:18px 8px 0}.step b{color:var(--red)}.step h4{margin:8px 0}.step small{color:var(--muted)}
+.contact{background:linear-gradient(135deg,#13151b,#0a0b0e);border-top:1px solid #252932}.contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:50px}.contact h2{font-size:clamp(40px,6vw,72px);line-height:1}.contact p{color:var(--muted)}.contactbox{border:1px solid #30343c;border-radius:20px;padding:24px;background:#0d0f13}.field{margin-bottom:12px}.field label{display:block;font-size:12px;color:#b8bdc6;margin-bottom:5px}.field input,.field textarea,.field select{width:100%;background:#12151a;border:1px solid #383c45;border-radius:10px;color:white;padding:12px;font:inherit}.field textarea{min-height:105px}
+.formnote{font-size:11px;color:var(--muted);margin-top:10px}.footer{padding:26px 0;border-top:1px solid #252932;color:#8d94a0;font-size:12px}.footin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.mobileMenu{display:none}
+@media(max-width:900px){.links{display:none}.mobileMenu{display:inline-flex}.sectionHead,.contactgrid,.case{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.workgrid{display:grid;grid-template-columns:1fr 1fr}.span7,.span5,.span4,.span8{grid-column:span 1}.process{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.wrap{padding:0 17px}.navin{height:67px}.brandtext small{display:none}.actions .staff{display:none}.hero{min-height:820px}.heroin{padding:130px 17px 45px}.hero h1{font-size:55px}.kpis{grid-template-columns:1fr 1fr;gap:16px}.services,.workgrid{grid-template-columns:1fr}.work{min-height:330px}.process{grid-template-columns:1fr 1fr}.caseVisual{min-height:380px}.contactbox{padding:17px}section{padding:72px 0}}
+</style>
 </head>
 <body>
-<nav class="nav">
-  <div class="wrap navin">
-    <a class="brand" href="#home">
-      <img src="logo.svg" alt="Jadedragon">
-      <div><strong>JADEDRAGON</strong><small>EVENT • CREATIVE • PRODUCTION</small></div>
-    </a>
-    <div class="links">
-      <a href="#services" data-th="บริการ" data-en="Services">บริการ</a>
-      <a href="#work" data-th="ผลงาน" data-en="Our Work">ผลงาน</a>
-      <a href="#case" data-th="กรณีศึกษา" data-en="Case Studies">กรณีศึกษา</a>
-      <a href="#production" data-th="โปรดักชัน" data-en="Production">โปรดักชัน</a>
-      <a href="#contact" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
-    </div>
-    <div class="actions">
-      <button class="btn lang" id="langBtn">TH / EN</button>
-      <a class="btn" href="app.html">Staff System</a><a class="btn primary" href="#brief" data-th="เริ่มโปรเจกต์" data-en="Start a Project">เริ่มโปรเจกต์</a>
-    </div>
-  </div>
-</nav>
+<nav class="nav"><div class="wrap navin">
+<a class="brand" href="#home"><div class="mark">J<span>D</span></div><div class="brandtext"><b>JADE<span style="color:#ff3045">DRAGON</span></b><small>EVENT • CREATIVE • PRODUCTION</small></div></a>
+<div class="links"><a href="#services">บริการ</a><a href="#works">ผลงาน</a><a href="#case">Case Study</a><a href="#process">การทำงาน</a><a href="#contact">ติดต่อ</a></div>
+<div class="actions"><a class="btn staff" href="app-v2.html">Staff System</a><a class="btn red" href="#contact">เริ่มโปรเจกต์</a></div>
+</div></nav>
 
-<header class="hero" id="home">
-  <div class="wrap">
-    <div class="eyebrow">EVENT / CREATIVE / PRODUCTION</div>
-    <h1>WE CREATE<br><span>EXPERIENCES.</span></h1>
-    <p class="lead" data-th="ออกแบบและจัดงานอีเวนต์ครบวงจร ตั้งแต่ Concept, Creative, Production, Run Show ไปจนถึงสื่อ วิดีโอ OB และ Live Streaming สำหรับองค์กร ภาครัฐ เทศกาล คอนเสิร์ต และกิจกรรมมวลชน"
-       data-en="Full-service event design and production — from concept, creative and show management to media, OB and live streaming for corporate, government, festivals, concerts and mass-participation events.">
-       ออกแบบและจัดงานอีเวนต์ครบวงจร ตั้งแต่ Concept, Creative, Production, Run Show ไปจนถึงสื่อ วิดีโอ OB และ Live Streaming สำหรับองค์กร ภาครัฐ เทศกาล คอนเสิร์ต และกิจกรรมมวลชน
-    </p>
-    <div class="hero-cta">
-      <a class="btn primary" href="#work" data-th="ดูผลงาน" data-en="View Our Work">ดูผลงาน</a>
-      <a class="btn" href="#brief" data-th="ส่งบรีฟงาน" data-en="Send Event Brief">ส่งบรีฟงาน</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>FULL</b><span>Service Event</span></div>
-      <div class="stat"><b>360°</b><span>Event Management</span></div>
-      <div class="stat"><b>LIVE</b><span>OB & Streaming</span></div>
-      <div class="stat"><b>ONE TEAM</b><span>Idea to Event Day</span></div>
-    </div>
-  </div>
-</header>
+<header class="hero" id="home"><div class="heroin">
+<div class="eyebrow">EVENT / CREATIVE / PRODUCTION</div>
+<h1>WE CREATE<br><em>EXPERIENCES.</em></h1>
+<p>ออกแบบและจัดงานอีเวนต์ครบวงจร ตั้งแต่ Concept, Creative, Production และ Run Show ไปจนถึง OB, Live Streaming และ Media Production สำหรับองค์กร ภาครัฐ เทศกาล คอนเสิร์ต กีฬา และกิจกรรมมวลชน</p>
+<div class="heroBtns"><a class="btn red" href="#works">ดูผลงาน</a><a class="btn" href="#contact">ส่งบรีฟงาน</a></div>
+<div class="kpis"><div class="kpi"><b>FULL</b><small>Service Event</small></div><div class="kpi"><b>360°</b><small>Event Management</small></div><div class="kpi"><b>LIVE</b><small>OB & Streaming</small></div><div class="kpi"><b>ONE TEAM</b><small>Idea to Event Day</small></div></div>
+</div></header>
 
-<section id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="eyebrow">01 / WHAT WE DO</div><h2 data-th="ครบตั้งแต่ไอเดีย<br>ถึงวันจัดงาน" data-en="From idea<br>to event day">ครบตั้งแต่ไอเดีย<br>ถึงวันจัดงาน</h2></div>
-      <p data-th="Jadedragon ทำหน้าที่เป็นทั้ง Organizer, Creative และ Production Partner ลดการประสานหลายทีม และคุมคุณภาพหน้างานจากศูนย์กลางเดียว"
-         data-en="Jadedragon works as organizer, creative and production partner in one team — reducing coordination overhead and keeping event-day quality under one command.">
-         Jadedragon ทำหน้าที่เป็นทั้ง Organizer, Creative และ Production Partner ลดการประสานหลายทีม และคุมคุณภาพหน้างานจากศูนย์กลางเดียว
-      </p>
-    </div>
-    <div class="grid services">
-      <article class="card"><div class="num">01</div><h3>Event & Organizer</h3><p>วางแผน ควบคุม และบริหารงานอีเวนต์ครบวงจร ตั้งแต่ Brief, Timeline, Supplier, Run Show และ Event Day.</p></article>
-      <article class="card"><div class="num">02</div><h3>Creative & Event Design</h3><p>Concept, Theme, Experience Design, Key Visual, Stage Mood & Tone และการออกแบบประสบการณ์ผู้ร่วมงาน.</p></article>
-      <article class="card"><div class="num">03</div><h3>Stage & Production</h3><p>Stage, Lighting, Sound, LED, Technical Production และทีมควบคุมหน้างาน.</p></article>
-      <article class="card"><div class="num">04</div><h3>Concert & Entertainment</h3><p>Concert, Artist, Performance, Backstage Coordination และ Show Flow.</p></article>
-      <article class="card"><div class="num">05</div><h3>OB & Live Streaming</h3><p>Multi-camera, OB, Live Streaming, Event Recording, Screen Feed และ Broadcast Workflow.</p></article>
-      <article class="card"><div class="num">06</div><h3>Media Production</h3><p>Video, Photo, On-site Content, Highlight, Interview และ Post-production.</p></article>
-      <article class="card"><div class="num">07</div><h3>Sport & Run Events</h3><p>Registration, Race Pack, Course Operation, Start–Finish Area, Timing coordination และ Mass Participation.</p></article>
-      <article class="card"><div class="num">08</div><h3>Government • Culture • Tourism</h3><p>งานภาครัฐ งานประเพณี งานวัฒนธรรม เทศกาล และกิจกรรมส่งเสริมการท่องเที่ยว.</p></article>
-    </div>
-  </div>
-</section>
+<section id="services"><div class="wrap">
+<div class="sectionHead"><div><div class="eyebrow">01 / WHAT WE DO</div><h2>ครบตั้งแต่ไอเดีย<br>ถึงวันจัดงาน</h2></div><p>Jadedragon ทำหน้าที่เป็นทีมเดียวกับลูกค้า เชื่อมงานครีเอทีฟ การผลิต บุคลากร หน้างาน สื่อ และเทคนิคเข้าด้วยกัน เพื่อให้งานเดินได้จริงและควบคุมคุณภาพได้ตลอดโครงการ</p></div>
+<div class="services">
+<div class="service"><div class="num">01</div><h3>Event & Organizer</h3><p>วางแผน บริหาร และควบคุมงานตั้งแต่ Brief, Timeline, Supplier จนถึง Run Show</p></div>
+<div class="service"><div class="num">02</div><h3>Creative & Event Design</h3><p>Concept, Theme, Key Visual, Stage Experience และการออกแบบประสบการณ์ของผู้ร่วมงาน</p></div>
+<div class="service"><div class="num">03</div><h3>Stage & Production</h3><p>Stage, Lighting, Sound, LED, ระบบเทคนิค ทีม Production และการควบคุมหน้างาน</p></div>
+<div class="service"><div class="num">04</div><h3>Concert & Entertainment</h3><p>คอนเสิร์ต ศิลปิน Entertainment Program และการบริหารพื้นที่สำหรับผู้ชมจำนวนมาก</p></div>
+<div class="service"><div class="num">05</div><h3>OB & Live Streaming</h3><p>Multi-camera, OB, Live Streaming, Recording และ Production สำหรับงานสด</p></div>
+<div class="service"><div class="num">06</div><h3>Government • Sport • Culture</h3><p>งานภาครัฐ งานกีฬา งานวิ่ง งานประเพณี เทศกาล และกิจกรรมส่งเสริมการท่องเที่ยว</p></div>
+</div></div></section>
 
-<section id="work">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="eyebrow">02 / SELECTED WORK</div><h2 data-th="ผลงานที่สะท้อน<br>ความสามารถของทีม" data-en="Selected work<br>across event formats">ผลงานที่สะท้อน<br>ความสามารถของทีม</h2></div>
-      <p data-th="V1.2 จัดผลงานตามประเภท เพื่อให้ลูกค้าองค์กรเห็นศักยภาพได้เร็วขึ้น และต่อยอดเป็น Case Study สำหรับงานขาย B2B"
-         data-en="V1.2 groups projects by format so corporate clients can assess capability quickly and use each project as a B2B case study.">
-         V1.2 จัดผลงานตามประเภท เพื่อให้ลูกค้าองค์กรเห็นศักยภาพได้เร็วขึ้น และต่อยอดเป็น Case Study สำหรับงานขาย B2B
-      </p>
-    </div>
-    <div class="portfolio-tools">
-      <button class="chip active" data-filter="all">All</button>
-      <button class="chip" data-filter="corporate">Corporate</button>
-      <button class="chip" data-filter="concert">Concert</button>
-      <button class="chip" data-filter="culture">Culture</button>
-      <button class="chip" data-filter="sport">Sport</button>
-      <button class="chip" data-filter="live">OB / Live</button>
-    </div>
-    <div class="grid projects">
-      <article class="project" data-cat="corporate" data-case="academic"><img src="academic.jpg" alt="Surat Academic 2025"><div class="project-copy"><small>FULL EVENT / STAGE / RUN TEAM</small><h3>SURAT ACADEMIC 2025</h3><p>Academic & public-sector event production</p></div></article>
-      <article class="project" data-cat="concert" data-case="concert"><img src="concert.jpg" alt="Concert"><div class="project-copy"><small>CONCERT / LIGHT / SOUND</small><h3>CONCERT & ENTERTAINMENT</h3><p>Show, stage, technical production</p></div></article>
-      <article class="project" data-cat="culture" data-case="culture"><img src="cultural.jpg" alt="Cultural Event"><div class="project-copy"><small>CULTURE / GOVERNMENT</small><h3>TRADITION & CULTURE</h3><p>Public ceremony and cultural event operations</p></div></article>
-      <article class="project" data-cat="sport" data-case="pride"><img src="pride.jpg" alt="Surat Pride Run"><div class="project-copy"><small>SPORT / MASS PARTICIPATION</small><h3>SURAT PRIDE RUN 2025</h3><p>Registration, race pack and event operations</p></div></article>
-      <article class="project" data-cat="live" data-case="live"><img src="production.jpg" alt="OB Live Production"><div class="project-copy"><small>OB / LIVE / VIDEO</small><h3>OB & LIVE PRODUCTION</h3><p>Multi-camera event production and streaming</p></div></article>
-      <article class="project" data-cat="culture" data-case="festival"><img src="festival.jpg" alt="Festival"><div class="project-copy"><small>TOURISM / FESTIVAL</small><h3>TOURISM & FESTIVAL</h3><p>Destination, community and festival experience</p></div></article>
-    </div>
-  </div>
-</section>
+<section id="works"><div class="wrap">
+<div class="sectionHead"><div><div class="eyebrow">02 / SELECTED WORKS</div><h2>งานจริง<br>หลายรูปแบบ</h2></div><p>ตัวอย่างผลงานจากงานวิชาการ งานคอนเสิร์ต งานวัฒนธรรม งานกีฬา งานเทศกาล และ Live Production</p></div>
+<div class="workgrid">
+<article class="work span7"><img src="assets/academic.jpg" alt="Surat Academic event"><div class="worktext"><small>FULL EVENT / PRODUCTION</small><h3>Surat Academic</h3></div></article>
+<article class="work span5"><img src="assets/concert.jpg" alt="Concert production"><div class="worktext"><small>CONCERT / ENTERTAINMENT</small><h3>Live Concert</h3></div></article>
+<article class="work span4"><img src="assets/cultural.jpg" alt="Cultural event"><div class="worktext"><small>GOVERNMENT / CULTURE</small><h3>Cultural Event</h3></div></article>
+<article class="work span4"><img src="assets/pride.jpg" alt="Surat Pride Run"><div class="worktext"><small>SPORT / MASS PARTICIPATION</small><h3>Surat Pride Run</h3></div></article>
+<article class="work span4"><img src="assets/production.jpg" alt="OB live production"><div class="worktext"><small>OB / LIVE STREAMING</small><h3>Live Production</h3></div></article>
+<article class="work span8"><img src="assets/festival.jpg" alt="Festival event"><div class="worktext"><small>TOURISM / FESTIVAL</small><h3>Festival & Tourism Event</h3></div></article>
+</div></div></section>
 
-<section id="case">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="eyebrow">03 / CASE STUDY</div><h2 data-th="จากโจทย์<br>สู่ประสบการณ์จริง" data-en="From brief<br>to real experience">จากโจทย์<br>สู่ประสบการณ์จริง</h2></div>
-      <p data-th="เราเริ่ม Case Study V1.2 ด้วยโครงแบบ Challenge → Scope → Execution → Result เพื่อให้ลูกค้าเห็นวิธีคิดและความสามารถในการบริหารจริง"
-         data-en="Our V1.2 case-study structure uses Challenge → Scope → Execution → Result, showing how Jadedragon thinks and executes.">
-         เราเริ่ม Case Study V1.2 ด้วยโครงแบบ Challenge → Scope → Execution → Result เพื่อให้ลูกค้าเห็นวิธีคิดและความสามารถในการบริหารจริง
-      </p>
-    </div>
-    <article class="case">
-      <img src="academic.jpg" alt="Surat Academic 2025">
-      <div>
-        <div class="eyebrow">CASE 01 / SURAT ACADEMIC 2025</div>
-        <h3>One team. Multiple production layers.</h3>
-        <ul>
-          <li><b>Challenge:</b> งานวิชาการที่ต้องควบคุมภาพรวม เวที และลำดับกิจกรรมพร้อมกัน</li>
-          <li><b>Scope:</b> Event management, stage, run team, technical coordination</li>
-          <li><b>Execution:</b> วาง Run of Show, technical cue และทีมประสานจุดปฏิบัติการ</li>
-          <li><b>Result:</b> สร้าง flow งานที่ชัดเจนและภาพรวมการจัดงานเป็นมาตรฐานเดียวกัน</li>
-        </ul>
-        <button class="btn" data-open-case="academic">ดูรายละเอียด Case Study</button>
-      </div>
-    </article>
-  </div>
-</section>
+<section id="case"><div class="wrap">
+<div class="sectionHead"><div><div class="eyebrow">03 / CASE STUDY</div><h2>ไม่ได้แค่ “จัดงาน”<br>แต่บริหารทั้งระบบ</h2></div><p>Case Study ของ Jadedragon จะอธิบายโจทย์ วิธีคิด ขอบเขตงาน การผลิต และผลลัพธ์ เพื่อให้ลูกค้าเห็นความสามารถของทีมมากกว่าภาพหน้างานเพียงอย่างเดียว</p></div>
+<div class="case"><div class="caseVisual"><img src="assets/pride.jpg" alt="Surat Pride Run case study"></div><div class="caseInfo"><div class="eyebrow">SURAT PRIDE RUN</div><h3>From Registration<br>to Event Day</h3><p>ดูแลการประสานงานก่อนงาน ระบบรับสมัครและ Race Pack การจัดพื้นที่ ทีมปฏิบัติการ และการควบคุมกิจกรรมในวันจริง ให้ทุกส่วนทำงานบน Timeline เดียวกัน</p>
+<div class="caseStats"><div class="caseStat"><b>Planning</b><small>Timeline & Operations</small></div><div class="caseStat"><b>Registration</b><small>Participant Journey</small></div><div class="caseStat"><b>Production</b><small>Stage & Technical</small></div><div class="caseStat"><b>Event Day</b><small>Run of Show</small></div></div></div></div>
+</div></section>
 
-<section id="production">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="eyebrow">04 / PRODUCTION</div><h2>Production<br>under control.</h2></div>
-      <p>ทีมงานหน้างานไม่ใช่แค่ “ติดตั้งอุปกรณ์” แต่ต้องเชื่อม Technical, Content, Show และ Operations ให้ทำงานเป็นจังหวะเดียวกัน</p>
-    </div>
-    <div class="grid production">
-      <article class="card"><div class="num">A</div><h3>Stage • Light • Sound</h3><p>ออกแบบและบริหาร Technical Production ตามพื้นที่จริงและรูปแบบงาน.</p></article>
-      <article class="card"><div class="num">B</div><h3>OB • LED • Live</h3><p>ระบบภาพ Multi-camera, Screen Feed, Recording และ Live Streaming.</p></article>
-      <article class="card"><div class="num">C</div><h3>Show Control</h3><p>Run Show, Cue, Backstage, Content Playback และการประสานทุกฝ่ายใน Event Day.</p></article>
-    </div>
-  </div>
-</section>
+<section id="process"><div class="wrap">
+<div class="sectionHead"><div><div class="eyebrow">04 / HOW WE WORK</div><h2>Workflow ที่ชัด<br>งานจึงควบคุมได้</h2></div><p>เว็บไซต์หน้าบ้านจะเชื่อมเข้าสู่ Event OS ในอนาคต เพื่อให้ข้อมูลจากลูกค้าไหลต่อไปยัง Lead, Quotation, Project และทีม Production โดยไม่ต้องกรอกซ้ำ</p></div>
+<div class="process"><div class="step"><b>01</b><h4>Brief</h4><small>รับโจทย์และเป้าหมาย</small></div><div class="step"><b>02</b><h4>Concept</h4><small>แนวคิดและประสบการณ์</small></div><div class="step"><b>03</b><h4>Quotation</h4><small>ขอบเขตและงบประมาณ</small></div><div class="step"><b>04</b><h4>Production</h4><small>ผลิตและเตรียมหน้างาน</small></div><div class="step"><b>05</b><h4>Event Day</h4><small>Run Show & Control</small></div><div class="step"><b>06</b><h4>Close</h4><small>สรุปงานและผลลัพธ์</small></div></div>
+</div></section>
 
-<section id="brief">
-  <div class="wrap brief">
-    <div class="brief-note">
-      <div class="eyebrow">05 / START A PROJECT</div>
-      <h3 data-th="เริ่มจาก Brief<br>ที่ชัดเจน" data-en="Start with<br>a clear brief">เริ่มจาก Brief<br>ที่ชัดเจน</h3>
-      <p data-th="เมื่อส่ง Event Brief ระบบ V1.2 จะสร้าง Lead ID อัตโนมัติ และส่งข้อมูลเข้าสู่ Staff Dashboard เพื่อทำ Quotation และเปลี่ยนเป็น Project ต่อได้"
-         data-en="When an Event Brief is submitted, V1.2 creates a Lead ID automatically and sends it to the Staff Dashboard for quotation and project conversion.">
-         เมื่อส่ง Event Brief ระบบ V1.2 จะสร้าง Lead ID อัตโนมัติ และส่งข้อมูลเข้าสู่ Staff Dashboard เพื่อทำ Quotation และเปลี่ยนเป็น Project ต่อได้
-      </p>
-      <div class="pipeline"><span>Event Brief</span><span>Lead</span><span>Quotation</span><span>Project</span><span>Workflow</span><span>ERP</span></div>
-    </div>
-    <form id="briefForm">
-      <label>ชื่อ / Name<input required name="name"></label>
-      <label>บริษัท / Organization<input name="company"></label>
-      <label>โทรศัพท์ / Phone<input name="phone"></label>
-      <label>Email<input type="email" name="email"></label>
-      <label>ประเภทงาน / Event Type<select name="type"><option>Corporate Event</option><option>Government / Culture</option><option>Concert / Entertainment</option><option>Sport / Run Event</option><option>Tourism / Festival</option><option>OB / Live Streaming</option><option>Other</option></select></label>
-      <label>ช่วงงบประมาณ / Budget<select name="budget"><option>ยังไม่กำหนด / TBD</option><option>ต่ำกว่า 100,000</option><option>100,000–300,000</option><option>300,000–1,000,000</option><option>มากกว่า 1,000,000</option></select></label>
-      <label class="full">วันที่ / สถานที่ / เป้าหมาย / Scope<textarea name="details" placeholder="เล่าโจทย์เบื้องต้นของงาน..."></textarea></label>
-      <div class="full"><button class="btn primary" type="submit">บันทึก Event Brief</button><div class="notice" id="briefNotice">บันทึก Brief ใน Browser แล้ว — พร้อมใช้เป็นต้นแบบ Lead System ใน Phase ถัดไป</div></div>
-    </form>
-  </div>
-</section>
+<section class="contact" id="contact"><div class="wrap contactgrid">
+<div><div class="eyebrow">START A PROJECT</div><h2>มีงานอยู่ในใจ?<br>คุยกับเราได้เลย</h2><p>ส่งรายละเอียดเบื้องต้นของงาน ทีม Jadedragon จะใช้ข้อมูลนี้เพื่อเตรียมคำถามและแนวทางก่อนเริ่มคุยงานอย่างเป็นระบบ</p>
+<p><a class="btn" href="https://www.facebook.com/share/1DGdpn4LY4/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook: Jadedragon Event Organizer</a></p></div>
+<form class="contactbox" onsubmit="submitBrief(event)">
+<div class="field"><label>ชื่อ / บริษัท</label><input required id="fName" placeholder="ชื่อผู้ติดต่อ หรือชื่อบริษัท"></div>
+<div class="field"><label>ประเภทงาน</label><select id="fType"><option>Corporate Event</option><option>Concert</option><option>Government Event</option><option>Festival / Tourism</option><option>Sport / Run</option><option>OB / Live Streaming</option><option>Other</option></select></div>
+<div class="field"><label>วันที่จัดงาน (ถ้ามี)</label><input id="fDate" type="date"></div>
+<div class="field"><label>งบประมาณโดยประมาณ</label><input id="fBudget" placeholder="เช่น 300,000 บาท"></div>
+<div class="field"><label>รายละเอียด Brief</label><textarea required id="fBrief" placeholder="สถานที่ จำนวนผู้ร่วมงาน สิ่งที่ต้องการ และเป้าหมายของงาน"></textarea></div>
+<button class="btn red" type="submit" style="width:100%">เตรียมข้อความส่ง Brief</button>
+<div class="formnote" id="formNote">เวอร์ชันหน้าบ้านนี้ยังไม่ส่งข้อมูลเข้าฐานข้อมูลอัตโนมัติ ระบบจะเตรียมข้อความให้คัดลอกไปส่งผ่าน Facebook ก่อน</div>
+</form>
+</div></section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="eyebrow">06 / CONTACT</div><h2 data-th="คุยโปรเจกต์<br>กับทีม Jadedragon" data-en="Talk to<br>Jadedragon">คุยโปรเจกต์<br>กับทีม Jadedragon</h2></div>
-      <p>ช่องทางที่ยืนยันแล้วใน V1.2 ใช้ Facebook Page ก่อน ส่วน LINE / โทรศัพท์ / Email จะเติมทันทีเมื่อได้รับข้อมูลทางการ เพื่อไม่ให้เว็บไซต์แสดงข้อมูลผิด.</p>
-    </div>
-    <div class="grid contact-grid">
-      <div class="contact-box"><h3>Facebook</h3><p>Jadedragon event organizer</p><a class="btn primary" target="_blank" rel="noopener" href="https://www.facebook.com/share/1DGdpn4LY4/?mibextid=wwXIfr">เปิด Facebook Page</a></div>
-      <div class="contact-box"><h3>LINE Official</h3><p>รอใส่ LINE ID / LINE OA ที่ยืนยันจากบริษัท</p><button class="btn" type="button" disabled>Pending official LINE</button></div>
-      <div class="contact-box"><h3>Phone / Email</h3><p>รอข้อมูลติดต่อทางการเพื่อใส่ในเว็บไซต์ Production</p><a class="btn" href="#brief">ส่ง Event Brief ก่อน</a></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="phase">
-      <div><div class="eyebrow" style="color:#555">NEXT PHASE / EVENT OS</div><h2>Website →<br>Business OS</h2><p style="color:#555;line-height:1.7">หลัง V1.2 เราจะเปลี่ยน “ฟอร์มติดต่อ” ให้กลายเป็นข้อมูลธุรกิจที่ไหลต่อเนื่องตั้งแต่ลูกค้าเข้ามาจนปิดกำไรโครงการ</p></div>
-      <div class="pipeline">
-        <span>Website</span><span>Event Brief</span><span>Lead ID</span><span>Site Survey</span><span>Concept</span><span>Costing</span><span>Quotation</span><span>Confirmed</span><span>Deposit</span><span>Production</span><span>Event Day</span><span>Billing</span><span>Profit Analysis</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer><div class="wrap">© 2026 Jadedragon Event Organizer · Event • Creative • Production · V1.2</div></footer>
-
-<div class="modal" id="caseModal">
-  <div class="modal-box">
-    <button class="modal-close" id="closeModal">×</button>
-    <div id="modalContent"></div>
-  </div>
-</div>
+<footer class="footer"><div class="wrap footin"><span>© 2026 Jadedragon Event Organizer</span><span>EVENT • CREATIVE • PRODUCTION</span></div></footer>
 
 <script>
-const translations = [...document.querySelectorAll('[data-th][data-en]')];
-let lang='th';
-document.getElementById('langBtn').addEventListener('click',()=>{
-  lang = lang==='th' ? 'en' : 'th';
-  translations.forEach(el=>el.innerHTML=el.dataset[lang]);
-  document.documentElement.lang=lang;
-});
-
-document.querySelectorAll('.chip').forEach(chip=>{
-  chip.addEventListener('click',()=>{
-    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-    chip.classList.add('active');
-    const f=chip.dataset.filter;
-    document.querySelectorAll('.project').forEach(p=>p.style.display=(f==='all'||p.dataset.cat===f)?'block':'none');
-  });
-});
-
-const caseData={
-  academic:{title:'SURAT ACADEMIC 2025',tag:'FULL EVENT / STAGE / RUN TEAM',body:'บริหารภาพรวมงาน เวที และลำดับกิจกรรม โดยเชื่อม Event Management, Technical Production และ Run Team ให้อยู่ภายใต้ flow เดียวกัน.'},
-  concert:{title:'CONCERT & ENTERTAINMENT',tag:'STAGE / LIGHT / SOUND / SHOW',body:'งานคอนเสิร์ตต้องควบคุมเวลา ศิลปิน เวที แสง เสียง และ backstage พร้อมกัน จุดแข็งของ Jadedragon คือการมองทุกส่วนเป็น Show System เดียว.'},
-  culture:{title:'TRADITION & CULTURE',tag:'GOVERNMENT / CULTURAL EVENT',body:'งานประเพณีและงานภาครัฐต้องให้ความสำคัญทั้งพิธีการ ภาพลักษณ์ ความถูกต้อง และการปฏิบัติหน้างาน.'},
-  pride:{title:'SURAT PRIDE RUN 2025',tag:'SPORT / REGISTRATION / OPERATION',body:'ตัวอย่างงานมวลชนที่ต้องเชื่อม Registration, Race Pack, Participant Flow และหน้างานให้ทำงานต่อกัน.'},
-  live:{title:'OB & LIVE PRODUCTION',tag:'MULTI-CAMERA / STREAMING / RECORDING',body:'OB และ Live Production เชื่อมกล้อง ภาพขึ้นจอ การบันทึก และ Live Streaming พร้อมการควบคุม Cue หน้างาน.'},
-  festival:{title:'TOURISM & FESTIVAL',tag:'DESTINATION / COMMUNITY / EXPERIENCE',body:'งานเทศกาลและท่องเที่ยวต้องออกแบบมากกว่าสถานที่ — ต้องสร้าง flow ของผู้ร่วมงานและประสบการณ์ที่เชื่อมกับพื้นที่.'}
-};
-function openCase(key){
- const d=caseData[key]; if(!d)return;
- document.getElementById('modalContent').innerHTML=`<div class="eyebrow">${d.tag}</div><h2 style="font-size:42px;margin:14px 0">${d.title}</h2><p style="color:#b7bcc5;line-height:1.8">${d.body}</p><hr style="border:0;border-top:1px solid #2e333b;margin:26px 0"><h3>Case Study Framework</h3><p style="color:#b7bcc5;line-height:1.8"><b>Challenge</b> → Scope → Execution → Result<br>V1.2 วางโครงไว้แล้ว ขั้นต่อไปจะเติมตัวเลขจริง เช่น จำนวนผู้ร่วมงาน ระยะเวลาติดตั้ง ทีมงาน ขอบเขตงาน และผลลัพธ์ที่ลูกค้ายืนยันได้.</p>`;
- document.getElementById('caseModal').classList.add('open');
-}
-document.querySelectorAll('[data-case]').forEach(p=>p.addEventListener('click',()=>openCase(p.dataset.case)));
-document.querySelectorAll('[data-open-case]').forEach(p=>p.addEventListener('click',()=>openCase(p.dataset.openCase)));
-document.getElementById('closeModal').onclick=()=>document.getElementById('caseModal').classList.remove('open');
-document.getElementById('caseModal').addEventListener('click',e=>{if(e.target.id==='caseModal')e.currentTarget.classList.remove('open')});
-
-function nextLeadId(){
- const d=new Date();
- const ym=String(d.getFullYear()).slice(-2)+String(d.getMonth()+1).padStart(2,'0');
- const seq=Number(localStorage.getItem('jd_lead_seq')||'0')+1;
- localStorage.setItem('jd_lead_seq',String(seq));
- return `JD-L${ym}-${String(seq).padStart(4,'0')}`;
-}
-document.getElementById('briefForm').addEventListener('submit',e=>{
+function submitBrief(e){
  e.preventDefault();
- const data=Object.fromEntries(new FormData(e.currentTarget).entries());
- data.id=nextLeadId(); data.status='New Lead'; data.createdAt=new Date().toISOString(); data.updatedAt=data.createdAt;
- data.quote=null; data.project=null;
- const leads=JSON.parse(localStorage.getItem('jadedragon_leads')||'[]');
- leads.unshift(data); localStorage.setItem('jadedragon_leads',JSON.stringify(leads));
- const n=document.getElementById('briefNotice');
- n.innerHTML=`Lead <b>${data.id}</b> ถูกสร้างแล้ว — <a href="app.html" style="text-decoration:underline">เปิด Staff System</a>`;
- n.style.display='block'; e.currentTarget.reset();
-});
+ const msg=`Jadedragon Event Brief\n\nชื่อ/บริษัท: ${fName.value}\nประเภทงาน: ${fType.value}\nวันที่: ${fDate.value||'-'}\nงบประมาณ: ${fBudget.value||'-'}\n\nBrief:\n${fBrief.value}`;
+ navigator.clipboard?.writeText(msg).then(()=>{
+   formNote.textContent='คัดลอก Brief แล้ว ✓ เปิด Facebook และวางข้อความเพื่อส่งหา Jadedragon ได้เลย';
+   formNote.style.color='#58e69a';
+ }).catch(()=>{
+   formNote.textContent='Brief พร้อมแล้ว กรุณาคัดลอกข้อมูลจากแบบฟอร์มและส่งผ่าน Facebook';
+ });
+}
 </script>
 </body>
 </html>
