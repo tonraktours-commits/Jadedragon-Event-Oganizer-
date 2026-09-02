@@ -33,30 +33,30 @@
     .btn.primary{background:var(--accent);border-color:var(--accent)}
     .btn.primary:hover{background:var(--accent2)}
     .lang{padding:9px 12px;font-size:12px}
-    .hero{min-height:720px;display:grid;align-items:end;padding:150px 0 76px;position:relative;overflow:hidden}
+    .hero{min-height:560px;display:grid;align-items:end;padding:130px 0 52px;position:relative;overflow:hidden}
     .hero:before{content:"";position:absolute;inset:0;background:
       linear-gradient(90deg,rgba(5,6,8,.96) 0%,rgba(5,6,8,.82) 46%,rgba(5,6,8,.24) 100%),
       linear-gradient(0deg,#08090b 0%,transparent 30%),
       url("hero.jpg") center/cover no-repeat;transform:scale(1.02)}
     .hero .wrap{position:relative;width:100%}
     .eyebrow{font-size:12px;letter-spacing:.18em;color:#b9bdc5;text-transform:uppercase}
-    h1{font-size:clamp(52px,8vw,110px);line-height:.87;letter-spacing:-.055em;margin:20px 0 24px;max-width:860px}
+    h1{font-size:clamp(2rem,5.2vw,4rem);line-height:1.06;letter-spacing:-.035em;margin:16px 0 20px;max-width:860px}
     h1 span{color:var(--accent)}
     .lead{max-width:700px;color:#d1d4da;font-size:18px;line-height:1.7}
     .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
     .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:54px}
     .stat{border-top:1px solid #393d44;padding-top:18px}
     .stat b{font-size:24px}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
-    section{padding:96px 0}
-    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
-    .section-head h2{font-size:clamp(34px,5vw,62px);line-height:1;margin:10px 0 0;letter-spacing:-.04em}
+    section{padding:64px 0;scroll-margin-top:90px}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:24px}
+    .section-head h2{font-size:clamp(1.5rem,2.6vw,2.125rem);font-weight:600;line-height:1.4;margin:8px 0 0;letter-spacing:-.015em;overflow-wrap:break-word}
     .section-head p{color:var(--muted);max-width:520px;line-height:1.7;margin:0}
     .grid{display:grid;gap:16px}
     .services{grid-template-columns:repeat(4,1fr)}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-height:220px;transition:.25s}
     .card:hover{transform:translateY(-4px);border-color:#464b55}
     .num{font-size:12px;color:var(--accent);letter-spacing:.12em}
-    .card h3{font-size:22px;margin:34px 0 12px}
+    .card h3{font-size:1.125rem;line-height:1.45;font-weight:600;margin:22px 0 10px}
     .card p{color:var(--muted);line-height:1.65;margin:0;font-size:14px}
     .portfolio-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
     .chip{border:1px solid #30343c;background:#111317;color:#cdd1d8;padding:9px 13px;border-radius:999px;cursor:pointer;font-size:12px}
@@ -66,10 +66,10 @@
     .project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
     .project:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(5,6,8,.92) 100%)}
     .project-copy{position:absolute;z-index:2;left:24px;right:24px;bottom:24px}
-    .project-copy small{color:#ddd}.project-copy h3{font-size:30px;margin:7px 0}.project-copy p{color:#bbb;margin:0}
+    .project-copy small{color:#ddd}.project-copy h3{font-size:clamp(1.125rem,2vw,1.375rem);line-height:1.4;font-weight:600;margin:7px 0}.project-copy p{color:#bbb;margin:0}
     .case{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:28px}
     .case img{border-radius:22px;aspect-ratio:4/3;object-fit:cover;width:100%}
-    .case h3{font-size:38px;margin:10px 0 14px}
+    .case h3{font-size:clamp(1.25rem,2.2vw,1.625rem);line-height:1.4;font-weight:600;margin:10px 0 14px}
     .case ul{padding-left:20px;color:#c9cdd4;line-height:1.8}
     .production{grid-template-columns:repeat(3,1fr)}
     .production .card{min-height:180px}
@@ -84,7 +84,7 @@
     .full{grid-column:1/-1}
     .contact-grid{grid-template-columns:repeat(3,1fr)}
     .contact-box{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:26px}
-    .contact-box h3{margin:0 0 9px}.contact-box p{color:var(--muted);margin:0 0 18px;line-height:1.6}
+    .contact-box h3{font-size:1.125rem;line-height:1.4;font-weight:600;margin:0 0 9px}.contact-box p{color:var(--muted);margin:0 0 18px;line-height:1.6}
     .phase{background:#f2f3f4;color:#111;border-radius:32px;padding:34px;display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:center}
     .phase h2{font-size:46px;line-height:1;margin:0 0 14px}
     .pipeline{display:flex;flex-wrap:wrap;gap:8px}
@@ -100,10 +100,10 @@
     }
     @media(max-width:580px){
       .wrap{padding:0 18px}.brand{min-width:auto}.brand small{display:none}.actions .lang{display:none}
-      .hero{min-height:690px;padding-bottom:52px}.lead{font-size:16px}.services{grid-template-columns:1fr}
-      section{padding:72px 0}.section-head{display:block}.section-head p{margin-top:16px}
+      .hero{min-height:560px;padding-bottom:40px}.lead{font-size:16px}.services{grid-template-columns:1fr}
+      section{padding:48px 0}.section-head{display:block}.section-head p{margin-top:16px}
       form{grid-template-columns:1fr}.full{grid-column:auto}.stats{grid-template-columns:1fr 1fr}
-      .project{min-height:350px}.case h3{font-size:31px}.phase h2{font-size:36px}
+      .project{min-height:350px}.case h3{font-size:1.25rem}.phase h2{font-size:36px}
     }
   </style>
 </head>
@@ -152,7 +152,7 @@
 <section id="services">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">01 / WHAT WE DO</div><h2 data-th="ครบตั้งแต่ไอเดีย<br>ถึงวันจัดงาน" data-en="From idea<br>to event day">ครบตั้งแต่ไอเดีย<br>ถึงวันจัดงาน</h2></div>
+      <div><div class="eyebrow">01 / WHAT WE DO</div><h2 data-th="ครบตั้งแต่ไอเดีย ถึงวันจัดงาน" data-en="From idea to event day">ครบตั้งแต่ไอเดีย ถึงวันจัดงาน</h2></div>
       <p data-th="Jadedragon ทำหน้าที่เป็นทั้ง Organizer, Creative และ Production Partner ลดการประสานหลายทีม และคุมคุณภาพหน้างานจากศูนย์กลางเดียว"
          data-en="Jadedragon works as organizer, creative and production partner in one team — reducing coordination overhead and keeping event-day quality under one command.">
          Jadedragon ทำหน้าที่เป็นทั้ง Organizer, Creative และ Production Partner ลดการประสานหลายทีม และคุมคุณภาพหน้างานจากศูนย์กลางเดียว
@@ -174,7 +174,7 @@
 <section id="work">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">02 / SELECTED WORK</div><h2 data-th="ผลงานที่สะท้อน<br>ความสามารถของทีม" data-en="Selected work<br>across event formats">ผลงานที่สะท้อน<br>ความสามารถของทีม</h2></div>
+      <div><div class="eyebrow">02 / SELECTED WORK</div><h2 data-th="ผลงานที่สะท้อน ความสามารถของทีม" data-en="Selected work across event formats">ผลงานที่สะท้อน ความสามารถของทีม</h2></div>
       <p data-th="V1.2 จัดผลงานตามประเภท เพื่อให้ลูกค้าองค์กรเห็นศักยภาพได้เร็วขึ้น และต่อยอดเป็น Case Study สำหรับงานขาย B2B"
          data-en="V1.2 groups projects by format so corporate clients can assess capability quickly and use each project as a B2B case study.">
          V1.2 จัดผลงานตามประเภท เพื่อให้ลูกค้าองค์กรเห็นศักยภาพได้เร็วขึ้น และต่อยอดเป็น Case Study สำหรับงานขาย B2B
@@ -202,7 +202,7 @@
 <section id="case">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">03 / CASE STUDY</div><h2 data-th="จากโจทย์<br>สู่ประสบการณ์จริง" data-en="From brief<br>to real experience">จากโจทย์<br>สู่ประสบการณ์จริง</h2></div>
+      <div><div class="eyebrow">03 / CASE STUDY</div><h2 data-th="จากโจทย์ สู่ประสบการณ์จริง" data-en="From brief to real experience">จากโจทย์ สู่ประสบการณ์จริง</h2></div>
       <p data-th="เราเริ่ม Case Study V1.2 ด้วยโครงแบบ Challenge → Scope → Execution → Result เพื่อให้ลูกค้าเห็นวิธีคิดและความสามารถในการบริหารจริง"
          data-en="Our V1.2 case-study structure uses Challenge → Scope → Execution → Result, showing how Jadedragon thinks and executes.">
          เราเริ่ม Case Study V1.2 ด้วยโครงแบบ Challenge → Scope → Execution → Result เพื่อให้ลูกค้าเห็นวิธีคิดและความสามารถในการบริหารจริง
@@ -228,7 +228,7 @@
 <section id="production">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">04 / PRODUCTION</div><h2>Production<br>under control.</h2></div>
+      <div><div class="eyebrow">04 / PRODUCTION</div><h2>Production under control.</h2></div>
       <p>ทีมงานหน้างานไม่ใช่แค่ “ติดตั้งอุปกรณ์” แต่ต้องเชื่อม Technical, Content, Show และ Operations ให้ทำงานเป็นจังหวะเดียวกัน</p>
     </div>
     <div class="grid production">
@@ -242,7 +242,7 @@
 <section id="brief">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">05 / START A PROJECT</div><h2 data-th="เล่าไอเดียงาน<br>ให้เราฟัง" data-en="Tell us about<br>your event">เล่าไอเดียงาน<br>ให้เราฟัง</h2></div>
+      <div><div class="eyebrow">05 / START A PROJECT</div><h2 data-th="เล่าไอเดียงาน ให้เราฟัง" data-en="Tell us about your event">เล่าไอเดียงาน ให้เราฟัง</h2></div>
       <p data-th="ส่งประเภทงาน วันและสถานที่จัดงาน พร้อมงบประมาณเบื้องต้นให้ทีม Jadedragon ผ่าน Facebook เพื่อพูดคุยรายละเอียดและแนวทางจัดงาน" data-en="Message Jadedragon on Facebook with your event type, date, venue and estimated budget to discuss your plans.">ส่งประเภทงาน วันและสถานที่จัดงาน พร้อมงบประมาณเบื้องต้นให้ทีม Jadedragon ผ่าน Facebook เพื่อพูดคุยรายละเอียดและแนวทางจัดงาน</p>
     </div>
     <a class="btn primary" target="_blank" rel="noopener" href="https://www.facebook.com/share/1DGdpn4LY4/?mibextid=wwXIfr" data-th="ติดต่อผ่าน Facebook" data-en="Contact us on Facebook">ติดต่อผ่าน Facebook</a>
@@ -252,7 +252,7 @@
 <section id="contact">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">06 / CONTACT</div><h2 data-th="คุยโปรเจกต์<br>กับทีม Jadedragon" data-en="Talk to<br>Jadedragon">คุยโปรเจกต์<br>กับทีม Jadedragon</h2></div>
+      <div><div class="eyebrow">06 / CONTACT</div><h2 data-th="คุยโปรเจกต์ กับทีม Jadedragon" data-en="Talk to Jadedragon">คุยโปรเจกต์ กับทีม Jadedragon</h2></div>
       <p>สอบถามบริการและพูดคุยรายละเอียดงานกับทีม Jadedragon ผ่าน Facebook Page</p>
     </div>
     <div class="grid contact-grid">
@@ -300,7 +300,7 @@ const caseData={
 };
 function openCase(key){
  const d=caseData[key]; if(!d)return;
- document.getElementById('modalContent').innerHTML=`<div class="eyebrow">${d.tag}</div><h2 style="font-size:42px;margin:14px 0">${d.title}</h2><p style="color:#b7bcc5;line-height:1.8">${d.body}</p>`;
+ document.getElementById('modalContent').innerHTML=`<div class="eyebrow">${d.tag}</div><h2 style="font-size:clamp(1.375rem,3vw,1.75rem);line-height:1.4;font-weight:600;margin:14px 0">${d.title}</h2><p style="color:#b7bcc5;line-height:1.8">${d.body}</p>`;
  document.getElementById('caseModal').classList.add('open');
 }
 document.querySelectorAll('[data-case]').forEach(p=>p.addEventListener('click',()=>openCase(p.dataset.case)));
