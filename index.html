@@ -1,91 +1,777 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JADEDRAGON — Event • Creative • Production</title>
-<style>
-:root{--bg:#090b0f;--panel:#10141a;--text:#f5f6f7;--muted:#a8adb5;--red:#ff1738;--line:#252a31}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans Thai",sans-serif}
-a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
-nav{position:sticky;top:0;z-index:20;background:rgba(9,11,15,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;gap:28px}.brand{font-weight:900;letter-spacing:.06em;margin-right:auto}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
-.menu{display:flex;gap:28px;font-weight:700}.cta{background:var(--red);padding:14px 20px;border-radius:4px;font-weight:800}
-.hero{min-height:680px;position:relative;display:flex;align-items:center;background:
-linear-gradient(90deg,rgba(4,5,8,.93) 0%,rgba(4,5,8,.70) 33%,rgba(4,5,8,.15) 70%),
-linear-gradient(0deg,rgba(9,11,15,.62),rgba(9,11,15,.08)),
-url("hero.jpg") center/cover no-repeat}
-.hero-content{padding:90px 0;max-width:620px}.eyebrow{letter-spacing:.28em;font-size:12px;color:#ddd}
-h1{font-size:clamp(48px,7vw,86px);line-height:.92;margin:24px 0}.red{color:var(--red)}
-.lead{font-size:20px;line-height:1.65;max-width:560px}.buttons{display:flex;gap:12px;margin-top:30px}.btn{padding:15px 22px;border:1px solid #777;border-radius:4px;font-weight:800}.btn.primary{background:var(--red);border-color:var(--red)}
-.section{padding:90px 0;border-top:1px solid var(--line)}.kicker{font-size:12px;letter-spacing:.3em;color:var(--red);font-weight:800}
-h2{font-size:clamp(34px,5vw,58px);margin:14px 0 22px}.muted{color:var(--muted);line-height:1.8}
-.behind-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}.behind-grid img{width:100%;display:block;border-radius:6px}
-.quote{border-left:3px solid var(--red);padding-left:18px;font-size:20px;font-weight:800;margin-top:24px}
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:var(--panel);border:1px solid var(--line);padding:26px;min-height:170px}.card b{display:block;margin-bottom:10px}.num{color:var(--red);font-size:12px;letter-spacing:.15em}
-.works{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.work{min-height:330px;background:#111 center/cover no-repeat;border:1px solid var(--line);position:relative}.work:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82),transparent 60%)}.work span{position:absolute;z-index:2;left:22px;bottom:22px;font-weight:900;font-size:22px}
-.contact{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.contact a,.contact div{border:1px solid var(--line);padding:22px;background:var(--panel)}
-footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-@media(max-width:800px){.menu{display:none}.hero{min-height:620px;background-position:58% center}.behind-grid,.services,.works,.contact{grid-template-columns:1fr}.behind-grid{gap:28px}.section{padding:64px 0}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadedragon Event Organizer - CMS with Members</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #e74c3c;
+            --primary-dark: #c0392b;
+            --text-dark: #2c3e50;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --success: #27ae60;
+            --danger: #e74c3c;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 1rem;
+        }
+
+        .modal-header h2 {
+            color: var(--text-dark);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Admin Controls */
+        .admin-controls {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 60px;
+            right: 1rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            min-width: 200px;
+            display: none;
+            z-index: 1001;
+        }
+
+        .user-dropdown.active {
+            display: block;
+        }
+
+        .user-dropdown a,
+        .user-dropdown button {
+            display: block;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .user-dropdown a:hover,
+        .user-dropdown button:hover {
+            background: var(--bg-light);
+            color: var(--primary-color);
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 7rem 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: var(--bg-white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 1rem auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .portfolio-item {
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .portfolio-favorite {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-favorite.liked {
+            color: var(--danger);
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-info p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 5rem 0;
+            background: var(--bg-white);
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Member Dashboard */
+        .member-dashboard {
+            padding: 3rem 0;
+            background: var(--bg-light);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .dashboard-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .booking-history {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .booking-item {
+            padding: 1rem;
+            border-left: 3px solid var(--primary-color);
+            margin-bottom: 1rem;
+            background: var(--bg-light);
+            border-radius: 4px;
+        }
+
+        .booking-item.pending {
+            border-left-color: #f39c12;
+        }
+
+        .booking-item.confirmed {
+            border-left-color: var(--success);
+        }
+
+        .booking-item.cancelled {
+            border-left-color: var(--danger);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a252f;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            box-shadow: var(--shadow-hover);
+            z-index: 3000;
+        }
+
+        .toast.success {
+            background: var(--success);
+        }
+
+        .toast.error {
+            background: var(--danger);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .admin-controls {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .admin-panel.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-content {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .admin-tab {
+            background: none;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .admin-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .item-list {
+            margin-top: 1rem;
+        }
+
+        .item-row {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-row button {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 <body>
-<nav><div class="wrap nav">
-  <div class="brand">JADEDRAGON<small>EVENT • CREATIVE • PRODUCTION</small></div>
-  <div class="menu"><a href="#services">บริการ</a><a href="#works">ผลงาน</a><a href="#behind">เบื้องหลัง</a><a href="#contact">ติดต่อ</a></div>
-  <a class="cta" href="#contact">ปรึกษาทีมงาน ↗</a>
-</div></nav>
+    <!-- Admin Controls -->
+    <div class="admin-controls">
+        <button class="btn btn-secondary" id="adminToggle" onclick="toggleAdminPanel()">🔧 Admin</button>
+        <button class="btn btn-secondary" id="loginToggle" onclick="toggleLoginModal()">👤 Login</button>
+    </div>
 
-<header class="hero">
- <div class="wrap"><div class="hero-content">
-  <div class="eyebrow">EVENT • CREATIVE • PRODUCTION</div>
-  <h1>WE CREATE<br><span class="red">EXPERIENCES.</span></h1>
-  <div class="lead">เปลี่ยนไอเดียให้เป็นประสบการณ์ ด้วยทีมออกแบบ จัดงาน และโปรดักชันที่ดูแลไปด้วยกัน</div>
-  <div class="buttons"><a class="btn primary" href="#contact">ปรึกษาทีมงาน ↗</a><a class="btn" href="#works">ดูผลงาน ↓</a></div>
- </div></div>
-</header>
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-content">
+            <div class="modal-header">
+                <h2>Admin Dashboard</h2>
+                <button class="close-btn" onclick="toggleAdminPanel()">✕</button>
+            </div>
 
-<section class="section" id="behind"><div class="wrap behind-grid">
- <div>
-  <div class="kicker">OUR TEAM</div>
-  <h2>เบื้องหลังประสบการณ์</h2>
-  <p class="lead" style="font-size:21px;font-weight:700">งานที่ผู้ชมเห็นบนเวทีหนึ่งงานไม่ได้เกิดจากทีมเดียว แต่เกิดจากหลายฝ่ายทำงานร่วมกัน</p>
-  <p class="muted">ตั้งแต่การวางแผน ออกแบบสร้างสรรค์ งานระบบ เทคนิค เวที แสง เสียง ภาพถ่ายและวิดีโอ ไปจนถึงทีมปฏิบัติการหน้างาน ทุกคนคือส่วนสำคัญที่ทำให้ประสบการณ์ของผู้ชมเกิดขึ้นอย่างสมบูรณ์</p>
-  <div class="quote">“เพราะทุกรายละเอียด คือประสบการณ์ของผู้ชม”</div>
- </div>
- <img src="behind-experience.jpg" alt="ทีมงานเบื้องหลังการผลิตอีเวนต์ Jadedragon">
-</div></section>
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="switchAdminTab('business')">ข้อมูลธุรกิจ</button>
+                <button class="admin-tab" onclick="switchAdminTab('services')">บริการ</button>
+                <button class="admin-tab" onclick="switchAdminTab('portfolio')">ผลงาน</button>
+                <button class="admin-tab" onclick="switchAdminTab('members')">สมาชิก</button>
+                <button class="admin-tab" onclick="switchAdminTab('bookings')">การจอง</button>
+            </div>
 
-<section class="section" id="services"><div class="wrap">
- <div class="kicker">WHAT WE DO</div><h2>บริการ</h2>
- <div class="services">
-  <div class="card"><span class="num">01</span><b>EVENT MANAGEMENT</b><span class="muted">วางแผนและบริหารจัดการงาน</span></div>
-  <div class="card"><span class="num">02</span><b>CREATIVE & DESIGN</b><span class="muted">แนวคิด ครีเอทีฟ และงานออกแบบ</span></div>
-  <div class="card"><span class="num">03</span><b>STAGE & PRODUCTION</b><span class="muted">เวที แสง เสียง ภาพ และระบบโปรดักชัน</span></div>
-  <div class="card"><span class="num">04</span><b>OB & LIVE STREAMING</b><span class="muted">ถ่ายทอดสด ทีมกล้อง และห้องควบคุม</span></div>
- </div>
-</div></section>
+            <!-- Business Tab -->
+            <div class="admin-section active" id="business-tab">
+                <h3>ข้อมูลธุรกิจ</h3>
+                <div class="form-group">
+                    <label>ชื่อบริษัท</label>
+                    <input type="text" id="businessName">
+                </div>
+                <div class="form-group">
+                    <label>สโลแกน</label>
+                    <input type="text" id="businessSlogan">
+                </div>
+                <button class="btn btn-primary" onclick="saveBusinessInfo()">บันทึก</button>
+            </div>
 
-<section class="section" id="works"><div class="wrap">
- <div class="kicker">SELECTED WORKS</div><h2>ประสบการณ์ที่เราร่วมสร้าง</h2>
- <div class="works">
-  <div class="work" style="background-image:url('academic.jpg')"><span>SURAT ACADEMIC 2025</span></div>
-  <div class="work" style="background-image:url('concert.jpg')"><span>CONCERT & SHOW</span></div>
-  <div class="work" style="background-image:url('festival.jpg')"><span>FESTIVAL & EVENT</span></div>
-  <div class="work" style="background-image:url('cultural.jpg')"><span>CULTURAL EXPERIENCE</span></div>
- </div>
-</div></section>
+            <!-- Services Tab -->
+            <div class="admin-section" id="services-tab">
+                <h3>จัดการบริการ</h3>
+                <div class="form-group">
+                    <label>ไอคอน</label>
+                    <input type="text" id="serviceIcon" placeholder="emoji">
+                </div>
+                <div class="form-group">
+                    <label>ชื่อบริการ</label>
+                    <input type="text" id="serviceName">
+                </div>
+                <div class="form-group">
+                    <label>คำอธิบาย</label>
+                    <textarea id="serviceDescription"></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="addService()">เพิ่มบริการ</button>
+                <div class="item-list" id="servicesList"></div>
+            </div>
 
-<section class="section" id="contact"><div class="wrap">
- <div class="kicker">LET'S CREATE TOGETHER</div><h2>เริ่มต้นงานครั้งต่อไปด้วยกัน</h2>
- <p class="muted">เล่าประเภทงาน วันจัดงาน สถานที่ และงบประมาณเบื้องต้น ให้ทีมช่วยวางแนวทาง</p>
- <div class="contact">
-  <a href="tel:0821131282"><b>โทรสอบถาม</b><br>082-113-1282</a>
-  <a href="mailto:jadedragon.organizer@gmail.com"><b>ส่งอีเมล</b><br>jadedragon.organizer@gmail.com</a>
-  <div><b>ทัก Inbox เพจ</b><br>Messenger ↗</div>
-  <div><b>Facebook Page</b><br>Jadedragon Event Organizer ↗</div>
- </div>
-</div></section>
+            <!-- Portfolio Tab -->
+            <div class="admin-section" id="portfolio-tab">
+                <h3>จัดการผลงาน</h3>
+                <div class="form-group">
+                    <label>ไอคอน</label>
+                    <input type="text" id="portfolioIcon" placeholder="emoji">
+                </div>
+                <div class="form-group">
+                    <label>ชื่องาน</label>
+                    <input type="text" id="portfolioTitle">
+                </div>
+                <div class="form-group">
+                    <label>คำอธิบาย</label>
+                    <textarea id="portfolioDescription"></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="addPortfolio()">เพิ่มผลงาน</button>
+                <div class="item-list" id="portfolioList"></div>
+            </div>
 
-<footer><div class="wrap">© 2026 Jadedragon Event Organizer — EVENT • CREATIVE • PRODUCTION</div></footer>
-</body></html>
+            <!-- Members Tab -->
+            <div class="admin-section" id="members-tab">
+                <h3>จัดการสมาชิก</h3>
+                <div class="item-list" id="membersList"></div>
+            </div>
+
+            <!-- Bookings Tab -->
+            <div class="admin-section" id="bookings-tab">
+                <h3>จัดการการจอง</h3>
+                <div class="item-list" id="bookingsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
