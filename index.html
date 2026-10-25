@@ -310,7 +310,7 @@ document.getElementById('closeModal').addEventListener('click',()=>modal.close()
 
 const quoteForm=document.getElementById('quoteForm');
 const quoteDate=document.getElementById('quoteDate');
-if(quoteDate)quoteDate.min=new Date().toISOString().slice(0,10);
+if(quoteDate){const p=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).map(x=>[x.type,x.value]));quoteDate.min=p.year+'-'+p.month+'-'+p.day;}
 function quoteMessage(){
  const type=document.getElementById('quoteType').value;
  const date=document.getElementById('quoteDate').value;
