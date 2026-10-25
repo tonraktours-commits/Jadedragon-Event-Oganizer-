@@ -106,6 +106,19 @@ dialog.has-gallery{width:min(940px,calc(100% - 32px))}
   .video-category-head h3{font-size:1.375rem}
   .brand strong{letter-spacing:.06em}
 }
+
+.quote-form{margin-top:32px;padding:30px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.quote-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.form-field{display:flex;flex-direction:column;gap:9px;min-width:0}
+.form-field span{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--text)}
+.form-field input,.form-field select{width:100%;min-height:52px;padding:12px 14px;border:1px solid #3b3e43;border-radius:4px;background:#0f1113;color:var(--text);font:inherit;font-size:16px;color-scheme:dark}
+.form-field input::placeholder{color:#7f8388}
+.form-field input:focus,.form-field select:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:transparent}
+.quote-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.quote-actions .btn{min-height:48px}
+.quote-note,.quote-status{margin:14px 0 0;color:var(--muted);font-size:13px}
+.quote-status{min-height:1.7em;color:#dfe2e5}
+@media(max-width:760px){.quote-form{padding:22px}.quote-grid{grid-template-columns:1fr}.quote-actions{flex-direction:column}.quote-actions .btn{width:100%}}
 </style></head><body><a class="skip-link" href="#main">ข้ามไปเนื้อหา / Skip to content</a>
 <nav class="nav" aria-label="Main navigation"><div class="wrap navin"><a class="brand" href="#home"><img id="jadedragon-logo" src="assets/recovered/e64a3fe468fa581dea74.jpg" alt="Jadedragon มังกรหยก" width="2048" height="1458" decoding="async"><div><strong>JADEDRAGON</strong><small>EVENT · CREATIVE · PRODUCTION</small></div></a><div class="links">
 <a href="#services" data-th="บริการ" data-en="Services">บริการ</a>
@@ -234,8 +247,38 @@ dialog.has-gallery{width:min(940px,calc(100% - 32px))}
 </div><div id="facebook-feed-host" class="facebook-feed-host"></div></div>
 </div></section>
 <section id="brief"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">06 / LET’S CREATE TOGETHER</div><h2 class="" data-th="เริ่มต้นงานครั้งต่อไปด้วยกัน" data-en="Let’s create your next event">เริ่มต้นงานครั้งต่อไปด้วยกัน</h2></div><p class="" data-th="เล่าประเภทงาน วันจัดงาน สถานที่ และงบประมาณเบื้องต้น ให้ทีมช่วยวางแนวทาง" data-en="Share your event type, date, venue and estimated budget. Let’s discuss the possibilities.">เล่าประเภทงาน วันจัดงาน สถานที่ และงบประมาณเบื้องต้น ให้ทีมช่วยวางแนวทาง</p></div>
-<a class="btn primary" href="https://m.me/RakkandeeByJadedragoneventorganizer" target="_blank" rel="noopener noreferrer" data-th="ปรึกษาจัดงาน ↗" data-en="Discuss your event ↗">ปรึกษาจัดงาน ↗</a>
+<div class="section-head"><div><div class="eyebrow">06 / LET’S CREATE TOGETHER</div><h2 data-th="ขอใบเสนอราคาจัดงาน" data-en="Request an event quotation">ขอใบเสนอราคาจัดงาน</h2></div><p data-th="กรอกรายละเอียดเบื้องต้น แล้วส่งให้ทีม Jadedragon ทาง LINE หรืออีเมล" data-en="Share the essentials, then send them to the Jadedragon team via LINE or email.">กรอกรายละเอียดเบื้องต้น แล้วส่งให้ทีม Jadedragon ทาง LINE หรืออีเมล</p></div>
+<form id="quoteForm" class="quote-form">
+<div class="quote-grid">
+<label class="form-field"><span data-th="ประเภทงาน *" data-en="Event type *">ประเภทงาน *</span><select id="quoteType" name="eventType" required>
+<option value="" data-th="เลือกประเภทงาน" data-en="Choose an event type">เลือกประเภทงาน</option>
+<option value="งานองค์กร / ประชุม / สัมมนา" data-th="งานองค์กร / ประชุม / สัมมนา" data-en="Corporate / Meeting / Seminar">งานองค์กร / ประชุม / สัมมนา</option>
+<option value="คอนเสิร์ต / เทศกาล / งานบันเทิง" data-th="คอนเสิร์ต / เทศกาล / งานบันเทิง" data-en="Concert / Festival / Entertainment">คอนเสิร์ต / เทศกาล / งานบันเทิง</option>
+<option value="เปิดตัวสินค้า / งานประชาสัมพันธ์" data-th="เปิดตัวสินค้า / งานประชาสัมพันธ์" data-en="Product launch / PR event">เปิดตัวสินค้า / งานประชาสัมพันธ์</option>
+<option value="งานวิ่ง / กิจกรรมกีฬา" data-th="งานวิ่ง / กิจกรรมกีฬา" data-en="Run / Sports event">งานวิ่ง / กิจกรรมกีฬา</option>
+<option value="เวที แสง สี เสียง / OB / Live" data-th="เวที แสง สี เสียง / OB / Live" data-en="Stage / Lighting / Sound / OB / Live">เวที แสง สี เสียง / OB / Live</option>
+<option value="งานอื่น ๆ" data-th="งานอื่น ๆ" data-en="Other">งานอื่น ๆ</option>
+</select></label>
+<label class="form-field"><span data-th="วันที่จัดงาน *" data-en="Event date *">วันที่จัดงาน *</span><input id="quoteDate" name="eventDate" type="date" required></label>
+<label class="form-field"><span data-th="สถานที่จัดงาน *" data-en="Venue / Location *">สถานที่จัดงาน *</span><input id="quoteLocation" name="location" type="text" autocomplete="street-address" placeholder="เช่น สุราษฎร์ธานี" required></label>
+<label class="form-field"><span data-th="งบประมาณโดยประมาณ *" data-en="Estimated budget *">งบประมาณโดยประมาณ *</span><select id="quoteBudget" name="budget" required>
+<option value="" data-th="เลือกช่วงงบประมาณ" data-en="Choose a budget range">เลือกช่วงงบประมาณ</option>
+<option value="ต่ำกว่า 100,000 บาท" data-th="ต่ำกว่า 100,000 บาท" data-en="Below THB 100,000">ต่ำกว่า 100,000 บาท</option>
+<option value="100,000–300,000 บาท" data-th="100,000–300,000 บาท" data-en="THB 100,000–300,000">100,000–300,000 บาท</option>
+<option value="300,001–500,000 บาท" data-th="300,001–500,000 บาท" data-en="THB 300,001–500,000">300,001–500,000 บาท</option>
+<option value="500,001–1,000,000 บาท" data-th="500,001–1,000,000 บาท" data-en="THB 500,001–1,000,000">500,001–1,000,000 บาท</option>
+<option value="มากกว่า 1,000,000 บาท" data-th="มากกว่า 1,000,000 บาท" data-en="Above THB 1,000,000">มากกว่า 1,000,000 บาท</option>
+<option value="ขอให้ทีมช่วยประเมิน" data-th="ขอให้ทีมช่วยประเมิน" data-en="Please help estimate">ขอให้ทีมช่วยประเมิน</option>
+</select></label>
+<label class="form-field"><span data-th="เบอร์ติดต่อ *" data-en="Phone number *">เบอร์ติดต่อ *</span><input id="quotePhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="เช่น 082-123-4567" pattern="[0-9+() -]{9,20}" required></label>
+</div>
+<div class="quote-actions">
+<button class="btn primary" type="submit" data-th="ส่งข้อมูลทาง LINE ↗" data-en="Send via LINE ↗">ส่งข้อมูลทาง LINE ↗</button>
+<button class="btn" type="button" id="quoteEmail" data-th="ส่งข้อมูลทางอีเมล ↗" data-en="Send via email ↗">ส่งข้อมูลทางอีเมล ↗</button>
+</div>
+<p class="quote-note" data-th="เว็บไซต์จะเปิด LINE หรือแอปอีเมลพร้อมรายละเอียดที่กรอกไว้ กรุณาตรวจสอบแล้วกดส่งอีกครั้ง" data-en="The website opens LINE or your email app with the completed details. Review them, then tap Send.">เว็บไซต์จะเปิด LINE หรือแอปอีเมลพร้อมรายละเอียดที่กรอกไว้ กรุณาตรวจสอบแล้วกดส่งอีกครั้ง</p>
+<p id="quoteStatus" class="quote-status" role="status" aria-live="polite"></p>
+</form>
 </div></section><section id="contact" aria-label="Contact"><div class="wrap contact-row"><div class="eyebrow">CONTACT</div><p>Jadedragon event organizer</p><div class="contact-methods">
 <a class="contact-method" href="tel:+66821131282"><span class="contact-label" data-th="โทรสอบถาม" data-en="Call us">โทรสอบถาม</span><span class="contact-value">082-113-1282</span></a>
 <a class="contact-method" href="mailto:jadedragon.organizer@gmail.com"><span class="contact-label" data-th="ส่งอีเมล" data-en="Email us">ส่งอีเมล</span><span class="contact-value">jadedragon.organizer@gmail.com</span></a>
@@ -263,6 +306,34 @@ document.getElementById('langBtn').addEventListener('click',()=>{lang=lang==='th
 document.querySelectorAll('[data-filter]').forEach(chip=>chip.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(c=>{c.classList.toggle('active',c===chip);c.setAttribute('aria-pressed',String(c===chip));});document.querySelectorAll('.project').forEach(p=>p.hidden=chip.dataset.filter!=='all'&&!p.dataset.cat.split(/\s+/).includes(chip.dataset.filter));}));
 document.querySelectorAll('[data-open-case]').forEach(btn=>btn.addEventListener('click',()=>{activeCase=btn.dataset.openCase;lastFocus=btn;renderCase();modal.showModal();modal.scrollTop=0;document.body.style.overflow='hidden';}));
 document.getElementById('closeModal').addEventListener('click',()=>modal.close());modal.addEventListener('click',e=>{if(e.target===modal){const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close();}});modal.addEventListener('close',()=>{document.body.style.overflow='';lastFocus?.focus();});
+
+
+const quoteForm=document.getElementById('quoteForm');
+const quoteDate=document.getElementById('quoteDate');
+if(quoteDate)quoteDate.min=new Date().toISOString().slice(0,10);
+function quoteMessage(){
+ const type=document.getElementById('quoteType').value;
+ const date=document.getElementById('quoteDate').value;
+ const location=document.getElementById('quoteLocation').value.trim();
+ const budget=document.getElementById('quoteBudget').value;
+ const phone=document.getElementById('quotePhone').value.trim();
+ return ['ขอใบเสนอราคาจัดงาน Jadedragon','ประเภทงาน: '+type,'วันที่จัดงาน: '+date,'สถานที่: '+location,'งบประมาณ: '+budget,'เบอร์ติดต่อ: '+phone].join('\n');
+}
+function quoteReady(){
+ if(!quoteForm.reportValidity())return false;
+ document.getElementById('quoteStatus').textContent=lang==='th'?'เตรียมข้อความเรียบร้อยแล้ว กรุณากดส่งในแอปที่เปิดขึ้น':'Your message is ready. Please tap Send in the app that opens.';
+ return true;
+}
+quoteForm.addEventListener('submit',event=>{
+ event.preventDefault();
+ if(!quoteReady())return;
+ window.location.href='https://line.me/R/oaMessage/%40j-da-team/?'+encodeURIComponent(quoteMessage());
+});
+document.getElementById('quoteEmail').addEventListener('click',()=>{
+ if(!quoteReady())return;
+ const subject=encodeURIComponent('ขอใบเสนอราคาจัดงาน Jadedragon');
+ window.location.href='mailto:jadedragon.organizer@gmail.com?subject='+subject+'&body='+encodeURIComponent(quoteMessage());
+});
 
 // Only the public Page Plugin is loaded: no page credentials or API tokens.
 (()=>{
