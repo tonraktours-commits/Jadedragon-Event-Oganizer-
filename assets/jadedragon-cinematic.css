@@ -1,0 +1,25 @@
+/* JADEDRAGON CINEMATIC DESIGN SYSTEM — shared across public pages */
+:root{--bg:#041217;--panel:#092127;--text:#f6fcfc;--muted:#b0c7c9;--line:#22464a;--accent:#19bdb0;--jade:#19bdb0;--jade-dark:#0b706a;--orange:#22c9be}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 85% 8%,rgba(15,133,128,.22),transparent 42%),linear-gradient(155deg,#030e14 0%,#071b20 48%,#020d12 100%);color:#f6fcfc}
+.nav{background:rgba(2,14,19,.96)!important;border-bottom:1px solid rgba(65,207,197,.18)!important;backdrop-filter:blur(14px)}
+.links,.navlinks,.links a,.navlinks a{color:#e6f7f7!important}
+.links a:hover,.navlinks a:hover,.links a[aria-current],.navlinks a[aria-current]{color:#3de3d6!important}
+.btn{border-radius:999px!important;border-color:rgba(71,212,204,.55)!important;color:#f6ffff!important;background:rgba(3,25,30,.4)!important}
+.btn.primary{background:linear-gradient(120deg,#13b7ad,#078c87)!important;border-color:#2bcebf!important;color:white!important}
+.btn:hover{background:#105c5c!important}
+.hero{background:linear-gradient(115deg,rgba(1,12,18,.88),rgba(4,43,47,.42)),radial-gradient(ellipse at 85% 10%,rgba(20,172,160,.2),transparent 60%)!important}
+.hero h1,.hero h2,.section h2,h1,h2,h3{color:#f6fcfc}
+.hero h1 span,h1 span,.eyebrow{color:#35d8cc!important}
+section{border-color:rgba(70,191,185,.18)}
+.project,.video-card,.card,.project-card,.gallery-card,article.project{background:rgba(7,32,38,.9)!important;border:1px solid rgba(61,183,179,.22)!important;border-radius:14px!important;overflow:hidden}
+.project img,.video-card img,.project-card img{object-fit:cover}
+.video-card,.project,.project-card{transition:transform .2s ease,border-color .2s ease}
+.video-card:hover,.project:hover,.project-card:hover{transform:translateY(-4px);border-color:#29d9c9!important}
+.video-thumb{position:relative;display:block}
+.video-play{display:grid;place-items:center;background:rgba(2,23,28,.62);border:2px solid #e8ffff;border-radius:50%;color:white}
+.video-watch,.project-link,.video-text-link:hover{color:#37e2d5!important}
+input,textarea,select{background:#09272c!important;color:#f5ffff!important;border-color:#3b6b6c!important}
+input::placeholder,textarea::placeholder{color:#a3b9ba}
+footer{background:#020e13!important;border-color:#215053!important;color:#c8dada}
+@media(max-width:700px){.wrap{width:min(calc(100% - 32px),1180px)!important}.navin{gap:10px}.video-grid{gap:18px}}
