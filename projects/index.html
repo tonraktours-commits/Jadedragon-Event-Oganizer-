@@ -180,6 +180,17 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(max-width:900px){.culture-feature{padding:62px 0}.culture-head{grid-template-columns:1fr;gap:24px}.culture-gallery figure,.culture-gallery figure:nth-child(1),.culture-gallery figure:nth-child(6){grid-column:span 6}.culture-cover{aspect-ratio:16/9}}
 @media(max-width:520px){.culture-feature{padding:48px 0 54px}.culture-feature h2{font-size:clamp(1.85rem,8.2vw,2.5rem);line-height:1.25}.culture-facts{gap:7px}.culture-facts span{font-size:12px}.culture-cover{aspect-ratio:4/3;border-radius:13px}.culture-cover figcaption{left:10px;bottom:10px;font-size:11px}.culture-gallery{gap:10px;margin-top:10px}.culture-gallery figure,.culture-gallery figure:nth-child(1),.culture-gallery figure:nth-child(6){grid-column:span 12;aspect-ratio:4/3}}
 
+
+.culture-chapter{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:38px 0 16px;padding-top:30px;border-top:1px solid rgba(94,224,213,.2)}
+.culture-chapter h3{font-size:clamp(1.45rem,2.5vw,2.25rem);line-height:1.25;margin:0;color:#fff}
+.culture-chapter span{color:#7fe4da;font-size:12px;font-weight:800;letter-spacing:.12em;white-space:nowrap}
+.culture-gallery.day-gallery figure{grid-column:span 6;aspect-ratio:4/3}
+.culture-gallery.day-gallery figure.wide{grid-column:span 8}
+.culture-gallery.day-gallery figure.portrait{grid-column:span 4;aspect-ratio:3/4}
+.culture-gallery.day-gallery figure:nth-child(4) img{object-position:center center}
+@media(max-width:900px){.culture-gallery.day-gallery figure,.culture-gallery.day-gallery figure.wide,.culture-gallery.day-gallery figure.portrait{grid-column:span 6}.culture-gallery.day-gallery figure.portrait{aspect-ratio:3/4}.culture-chapter{align-items:flex-start;flex-direction:column-reverse;gap:7px}}
+@media(max-width:520px){.culture-gallery.day-gallery figure,.culture-gallery.day-gallery figure.wide,.culture-gallery.day-gallery figure.portrait{grid-column:span 12}.culture-chapter{margin-top:30px;padding-top:24px}.culture-chapter h3{font-size:1.5rem}}
+
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
@@ -213,8 +224,21 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </div>
 <div class="culture-source"><strong data-th="ข้อมูลที่ตรวจสอบจากโพสต์ผลงานจริง" data-en="Verified from the published project post">ข้อมูลที่ตรวจสอบจากโพสต์ผลงานจริง</strong><span data-th="ขอบคุณองค์การบริหารส่วนจังหวัดสุราษฎร์ธานี · จัดโดย JadeDragon Event Organizer" data-en="With thanks to the Surat Thani Provincial Administrative Organization · Organized by JadeDragon Event Organizer">ขอบคุณองค์การบริหารส่วนจังหวัดสุราษฎร์ธานี · จัดโดย JadeDragon Event Organizer</span><br><a href="https://www.facebook.com/media/set/?set=a.695240983515313&type=3" target="_blank" rel="noopener" data-th="ดูอัลบั้มต้นฉบับบน Facebook ↗" data-en="View original Facebook album ↗">ดูอัลบั้มต้นฉบับบน Facebook ↗</a></div>
 </div>
-<figure class="culture-cover"><img src="../assets/projects/phra-that-sri-surat-2569/cover.webp" alt="พลุเหนือเวทีพิธีสมโภชผ้าห่มพระธาตุศรีสุราษฎร์" width="1800" height="1200" fetchpriority="high"><figcaption data-th="ภาพจริงจากพื้นที่จัดงาน" data-en="On-site project photography">ภาพจริงจากพื้นที่จัดงาน</figcaption></figure>
-<div class="culture-gallery" aria-label="ภาพผลงานพิธีสมโภชผ้าห่มพระธาตุศรีสุราษฎร์">
+<figure class="culture-cover"><img src="../assets/projects/phra-that-sri-surat-2569/cover.webp" alt="ขบวนแห่ผ้าห่มพระธาตุศรีสุราษฎร์และธรรมชาติเขาท่าเพชร ครั้งที่ 16" width="1600" height="1066" fetchpriority="high"><figcaption data-th="ขบวนแห่ผ้าห่มพระธาตุศรีสุราษฎร์ · ภาพจริงจากพื้นที่จัดงาน" data-en="Phra That Si Surat sacred cloth procession · On-site photography">ขบวนแห่ผ้าห่มพระธาตุศรีสุราษฎร์ · ภาพจริงจากพื้นที่จัดงาน</figcaption></figure>
+<div class="culture-chapter"><h3 data-th="ขบวนแห่และพิธีห่มพระธาตุ" data-en="Sacred Cloth Procession & Wrapping Ceremony">ขบวนแห่และพิธีห่มพระธาตุ</h3><span>01 / DAY CEREMONY</span></div>
+<div class="culture-gallery day-gallery" aria-label="ภาพขบวนแห่และพิธีห่มพระธาตุศรีสุราษฎร์">
+<figure class="wide"><img src="../assets/projects/phra-that-sri-surat-2569/cloth-procession.webp" alt="ผู้ร่วมขบวนแห่ผ้าห่มพระธาตุในเขตเมืองสุราษฎร์ธานี" width="1600" height="1066" loading="lazy"></figure>
+<figure class="portrait"><img src="../assets/projects/phra-that-sri-surat-2569/city-procession.webp" alt="ขบวนผ้าห่มพระธาตุทอดยาวบนถนนในเมืองสุราษฎร์ธานี" width="1200" height="1800" loading="lazy"></figure>
+<figure class="wide"><img src="../assets/projects/phra-that-sri-surat-2569/forest-procession.webp" alt="ขบวนแห่ผ้าห่มพระธาตุเดินขึ้นสู่เขาท่าเพชร" width="1600" height="1066" loading="lazy"></figure>
+<figure class="portrait"><img src="../assets/projects/phra-that-sri-surat-2569/stupa.webp" alt="ผู้ร่วมพิธีบริเวณพระธาตุศรีสุราษฎร์" width="1200" height="1800" loading="lazy"></figure>
+<figure><img src="../assets/projects/phra-that-sri-surat-2569/handover.webp" alt="เจ้าหน้าที่ร่วมส่งต่อผืนผ้าภายในขบวนพิธี" width="1600" height="1066" loading="lazy"></figure>
+<figure><img src="../assets/projects/phra-that-sri-surat-2569/arrival.webp" alt="ขบวนผ้าห่มพระธาตุเดินทางถึงบริเวณพิธี" width="1600" height="1066" loading="lazy"></figure>
+<figure class="portrait"><img src="../assets/projects/phra-that-sri-surat-2569/wrapping.webp" alt="พิธีห่มผ้ารอบองค์พระธาตุศรีสุราษฎร์" width="1200" height="1800" loading="lazy"></figure>
+<figure class="wide"><img src="../assets/projects/phra-that-sri-surat-2569/prayer.webp" alt="ผู้ร่วมงานประกอบพิธีสวดมนต์บริเวณองค์พระธาตุ" width="1600" height="1066" loading="lazy"></figure>
+</div>
+<div class="culture-chapter"><h3 data-th="พิธีสมโภชและการแสดงยามค่ำคืน" data-en="Evening Celebration & Cultural Performance">พิธีสมโภชและการแสดงยามค่ำคืน</h3><span>02 / NIGHT CELEBRATION</span></div>
+<div class="culture-gallery" aria-label="ภาพพิธีสมโภชและการแสดงยามค่ำคืน">
+<figure><img src="../assets/projects/phra-that-sri-surat-2569/fireworks.webp" alt="พลุเหนือเวทีพิธีสมโภชผ้าห่มพระธาตุศรีสุราษฎร์" width="1800" height="1200" loading="lazy"></figure>
 <figure><img src="../assets/projects/phra-that-sri-surat-2569/inscription.webp" alt="ประชาชนร่วมลงนามบนผ้าห่มพระธาตุ" width="1800" height="1200" loading="lazy"></figure>
 <figure><img src="../assets/projects/phra-that-sri-surat-2569/guests.webp" alt="แขกผู้มีเกียรติเยี่ยมชมนิทรรศการในพื้นที่งาน" width="1800" height="1200" loading="lazy"></figure>
 <figure><img src="../assets/projects/phra-that-sri-surat-2569/ceremony.webp" alt="ประธานในพิธีลงนามบนผ้าห่มพระธาตุ" width="1800" height="1200" loading="lazy"></figure>
