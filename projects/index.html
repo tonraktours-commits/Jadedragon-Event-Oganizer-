@@ -132,6 +132,16 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .nav .navin>.actions{display:flex;align-items:center;margin-left:auto;flex:0 0 auto}
 @media(min-width:1051px){.nav .navin>.links{max-width:calc(100% - 440px)} }
 @media(max-width:1050px){.nav .navin>.links{order:3;width:100%;justify-content:center;flex-wrap:wrap}.nav .navin>.actions{order:2}}
+
+/* Consistent centered four-item navigation on Projects page. */
+@media(min-width:761px){
+ .nav .navin{position:relative!important;display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:nowrap!important}
+ .nav .navin>.brand{flex:0 0 auto!important}
+ .nav .navin>.links{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;display:flex!important;align-items:center!important;justify-content:center!important;width:max-content!important;max-width:none!important;gap:clamp(12px,1.5vw,24px)!important;margin:0!important;order:initial!important;white-space:nowrap!important}
+ .nav .navin>.links>a{white-space:nowrap!important}
+}
+@media(min-width:761px) and (max-width:1100px){.nav .navin>.links{gap:12px!important;font-size:13px!important}}
+@media(max-width:760px){.nav .navin>.links{position:static!important;transform:none!important;display:flex!important;justify-content:center!important;width:100%!important;margin:0 auto!important;gap:12px!important;order:3!important}}
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
