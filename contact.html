@@ -291,6 +291,17 @@ a:focus-visible,button:focus-visible{outline:3px solid #ff7a00;outline-offset:3p
 @media(min-width:761px) and (max-width:1050px){.nav .brand .jd-logo-stack img{width:210px!important;height:138px!important}}
 @media(max-width:760px){.nav .brand .jd-logo-stack img{width:170px!important;height:112px!important}}
 @media(max-width:380px){.nav .brand .jd-logo-stack img{width:150px!important;height:99px!important}}
+
+/* Center the four primary navigation items independently of logo/actions. */
+@media(min-width:1051px){
+ .nav .navin{position:relative;display:flex;justify-content:space-between}
+ .nav .navin>.links{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content;max-width:calc(100% - 430px);justify-content:center;gap:clamp(12px,1.4vw,22px);margin:0}
+ .nav .navin>.links>a{white-space:nowrap}
+ .nav .navin>.actions{margin-left:auto}
+}
+@media(max-width:1050px){
+ .nav .navin>.links{justify-content:center}
+}
 </style><link rel="stylesheet" href="assets/jadedragon-cinematic.css"></head><body class="contact-page"><a class="skip-link" href="#main">ข้ามไปเนื้อหา / Skip to content</a><nav class="nav" aria-label="Main navigation"><div class="wrap navin"><a class="brand brand-logo" href="index.html#home" aria-label="JadeDragon Group Event & Organizer"><span class="jd-logo-stack"><img id="jadedragon-logo" src="assets/jadedragon-logo-brand.webp" alt="JadeDragon Group Event & Organizer" width="900" height="593" decoding="async"></span></a><div class="links">
 <a href="index.html#home" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
 <a href="projects/index.html" data-th="ผลงาน (โครงการ)" data-en="Projects">ผลงาน (โครงการ)</a>
