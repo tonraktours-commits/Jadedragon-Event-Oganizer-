@@ -127,6 +127,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(max-width:1050px){
  .nav .navin>.links{justify-content:center}
 }
+
+/* Project header: keep the CTA separate so only four links are centered. */
+.nav .navin>.actions{display:flex;align-items:center;margin-left:auto;flex:0 0 auto}
+@media(min-width:1051px){.nav .navin>.links{max-width:calc(100% - 440px)} }
+@media(max-width:1050px){.nav .navin>.links{order:3;width:100%;justify-content:center;flex-wrap:wrap}.nav .navin>.actions{order:2}}
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
@@ -138,8 +143,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <a href="index.html" aria-current="page">ผลงาน (โครงการ)</a>
 <a href="../videos.html">วิดีโอ</a>
 <a href="../index.html#contact">ติดต่อ</a>
-<a class="btn primary" href="../index.html#brief">ขอใบเสนอราคา</a>
-</div></div></nav>
+</div><div class="actions"><a class="btn primary" href="../index.html#brief">ขอใบเสนอราคา</a></div></div></nav>
 <main id="main">
 <header class="hero"><div class="wrap">
 <div class="eyebrow">OUR PROJECTS / JADEDRAGON</div>
