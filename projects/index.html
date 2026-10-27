@@ -43,6 +43,59 @@ a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .detail-guide .guide-card b{color:#ff9c25!important}
 .detail-guide .guide-card strong{color:#fff!important}
 .detail-guide .guide-card span{color:#d5e9e5!important;opacity:1!important}
+
+/* Responsive type scale for Projects on desktop, iPad and iPhone */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.hero h1{font-size:clamp(2.5rem,5.2vw,4.8rem);line-height:1.16;letter-spacing:-.035em;overflow-wrap:break-word}
+.hero .wrap>p{font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.85}
+.intro h2,.guide-head h2{font-size:clamp(1.85rem,3.1vw,2.8rem);line-height:1.28;letter-spacing:-.02em}
+.intro p,.guide-head p{font-size:clamp(1rem,1.25vw,1.125rem);line-height:1.85}
+.project h2{font-size:clamp(1.6rem,2.6vw,2.6rem);line-height:1.2;letter-spacing:-.015em}
+.project p{font-size:clamp(.96rem,1.2vw,1.08rem);line-height:1.75}
+.guide-card strong{font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.5}
+.guide-card span{font-size:clamp(.94rem,1.1vw,1.02rem);line-height:1.75;display:block}
+.guide-card b{font-size:.88rem}
+.cta h2{font-size:clamp(1.75rem,2.8vw,2.5rem);line-height:1.3}
+.cta p{font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.8}
+@media(min-width:761px) and (max-width:1100px){
+ .wrap{width:calc(100% - 64px)}
+ .hero{padding:68px 0 62px}
+ .hero h1{font-size:clamp(2.7rem,5vw,4.2rem)}
+ .intro-grid,.guide-head{gap:30px}
+ .project h2{font-size:clamp(1.65rem,2.8vw,2.3rem)}
+ .project-copy,.project.featured .project-copy{padding:28px}
+ .links{gap:14px;font-size:13px}
+}
+@media(max-width:760px){
+ .hero{padding:46px 0 48px}
+ .hero h1{font-size:clamp(2.1rem,8.5vw,3.4rem);line-height:1.2;letter-spacing:-.025em}
+ .hero .wrap>p{font-size:1rem;line-height:1.85}
+ .hero-note{font-size:.82rem;gap:10px 18px}
+ .intro{padding:42px 0 12px}
+ .intro h2,.guide-head h2{font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.3}
+ .intro p,.guide-head p{font-size:1rem;line-height:1.85}
+ .projects{padding:24px 0 56px}
+ .project h2{font-size:clamp(1.55rem,5.8vw,2.15rem);line-height:1.23}
+ .project p{font-size:.98rem;line-height:1.75}
+ .project-copy,.project.featured .project-copy{padding:22px}
+ .detail-guide{padding:52px 0!important}
+ .guide-grid{gap:12px}
+ .guide-card{padding:20px;min-height:0}
+ .guide-card strong{font-size:1.06rem}
+ .guide-card span{font-size:.96rem}
+ .cta{padding:48px 0}
+ .cta h2{font-size:clamp(1.65rem,6vw,2.15rem)}
+ .links{font-size:14px}
+}
+@media(max-width:460px){
+ .hero h1{font-size:clamp(2rem,8.2vw,2.65rem)}
+ .project,.project.featured{min-height:350px}
+ .guide-grid{grid-template-columns:1fr}
+ .guide-card{padding:18px 20px}
+ .guide-card strong{margin:9px 0 4px}
+ .project-badge{font-size:10px}
+ .meta{font-size:12px;gap:8px 14px}
+}
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
