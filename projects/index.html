@@ -142,6 +142,14 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 }
 @media(min-width:761px) and (max-width:1100px){.nav .navin>.links{gap:12px!important;font-size:13px!important}}
 @media(max-width:760px){.nav .navin>.links{position:static!important;transform:none!important;display:flex!important;justify-content:center!important;width:100%!important;margin:0 auto!important;gap:12px!important;order:3!important}}
+
+/* Shared header controls: match homepage, maintain true center alignment. */
+.nav .navin>.actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex:0 0 auto}
+.nav .navin>.actions .lang{border:1px solid #a7c9c1;background:transparent;color:inherit;border-radius:6px;min-height:42px;padding:8px 12px;font:700 13px inherit;cursor:pointer}
+.nav .navin>.actions .btn{min-height:42px;padding:8px 13px;font-size:13px;white-space:nowrap}
+@media(min-width:1101px){.nav .navin>.links{max-width:none!important;gap:14px!important;font-size:13px!important}.nav .navin>.brand{max-width:230px}}
+@media(min-width:761px) and (max-width:1100px){.nav .navin{flex-wrap:wrap!important;justify-content:space-between!important}.nav .navin>.links{position:static!important;transform:none!important;order:3!important;width:100%!important;justify-content:center!important;margin:0 auto!important;gap:20px!important}.nav .navin>.actions{order:2!important}}
+@media(max-width:760px){.nav .navin>.actions{order:2!important;gap:5px}.nav .navin>.actions .btn{font-size:11px;padding:7px 9px}.nav .navin>.actions .lang{font-size:12px;padding:7px 9px}.nav .navin>.links{order:3!important}}
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
@@ -149,11 +157,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <nav class="nav" aria-label="Main navigation"><div class="wrap navin">
 <a class="brand" href="../index.html#home" aria-label="JadeDragon Group Event & Organizer"><span class="jd-logo-stack"><img src="../assets/jadedragon-logo-brand.webp" alt="JadeDragon Group Event & Organizer" width="900" height="593"></span></a>
 <div class="links">
-<a href="../index.html">หน้าแรก</a>
-<a href="index.html" aria-current="page">ผลงาน (โครงการ)</a>
-<a href="../videos.html">วิดีโอ</a>
-<a href="../index.html#contact">ติดต่อ</a>
-</div></div></nav>
+<a href="../index.html" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+<a href="index.html" aria-current="page" data-th="ผลงาน (โครงการ)" data-en="Projects">ผลงาน (โครงการ)</a>
+<a href="../videos.html" data-th="วิดีโอ" data-en="Videos">วิดีโอ</a>
+<a href="../contact.html" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
+</div><div class="actions"><button type="button" class="lang" id="langBtn" aria-label="Switch to English">EN</button><a class="btn primary" href="../contact.html#brief" data-th="ปรึกษาจัดงาน" data-en="Let’s talk">ปรึกษาจัดงาน</a></div></div></nav>
 <main id="main">
 <header class="hero"><div class="wrap">
 <div class="eyebrow">OUR PROJECTS / JADEDRAGON</div>
@@ -187,4 +195,14 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <section class="cta"><div class="wrap cta-in"><div><h2>มีโครงการที่อยากให้เราร่วมสร้างไหมครับ</h2><p>ส่งประเภทงาน วันที่ สถานที่ งบประมาณ และข้อมูลติดต่อให้ทีมช่วยประเมินเบื้องต้น</p></div><a class="btn" href="../index.html#brief">เริ่มขอใบเสนอราคา ↗</a></div></section>
 </main>
 <footer><div class="wrap footer"><span>© 2026 Jadedragon Event Organizer</span><a href="../index.html#contact">ติดต่อทีมงาน ↗</a></div></footer>
-</body></html>
+<script>
+(function(){
+ const btn=document.getElementById('langBtn');let lang='th';
+ const translations=[
+ ['ผลงานที่เราได้ร่วมสร้าง','Work We Have Created Together'],['จากแนวคิดสู่ประสบการณ์จริง','From Ideas to Real Experiences'],['รวมโครงการที่ทีม Jadedragon ได้ออกแบบ วางแผน ประสานงาน และผลิตหน้างาน แต่ละโครงการนำเสนอด้วยภาพจริงและข้อมูลสำคัญเพื่อให้เห็นกระบวนการและผลลัพธ์อย่างชัดเจน','Explore projects designed, planned, coordinated and produced by Jadedragon, with real photos and key project details.'],['OUR PROJECTS / JADEDRAGON','OUR PROJECTS / JADEDRAGON'],['งานวิชาการและกิจกรรมองค์กร','Academic and Corporate Events'],['ดูรายละเอียดและภาพโครงการ','View Project Details and Photos'],['กิจกรรมวิ่งที่รวมจุดปล่อยตัว วอร์มอัพ เวที และการสนับสนุนผู้ร่วมงานในพื้นที่เดียวกัน','A running event bringing together the start line, warm-up, stage and participant support.'],['มีโครงการที่อยากให้เราร่วมสร้างไหมครับ','Have a Project in Mind?'],['ส่งประเภทงาน วันที่ สถานที่ งบประมาณ และข้อมูลติดต่อให้ทีมช่วยประเมินเบื้องต้น','Send us the event type, date, venue, budget and contact details for an initial consultation.'],['เริ่มขอใบเสนอราคา ↗','Request a Quote ↗'],['ติดต่อทีมงาน ↗','Contact Our Team ↗'],['ภาพจากโครงการ','Project Photos'],['ขอบเขตการทำงาน','Scope of Work'],['บทบาทของทีมและองค์ประกอบที่รับผิดชอบ','Our responsibilities and deliverables'],['ภาพปกและแกลเลอรีจากพื้นที่จริง','Cover photos and on-site galleries']
+ ];
+ const walker=document.createTreeWalker(document.querySelector('main,footer')?.parentElement||document.body,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode()){const n=walker.currentNode;if(n.parentElement?.closest('script,style,nav'))continue;nodes.push({node:n,original:n.nodeValue});}
+ function setLanguage(next){lang=next;document.documentElement.lang=lang;document.querySelectorAll('[data-th][data-en]').forEach(el=>{el.textContent=el.dataset[lang]});nodes.forEach(({node,original})=>{let s=original;if(lang==='en')translations.forEach(([th,en])=>{s=s.split(th).join(en)});node.nodeValue=s});btn.textContent=lang==='th'?'EN':'TH';btn.setAttribute('aria-label',lang==='th'?'Switch to English':'เปลี่ยนเป็นภาษาไทย')}
+ btn.addEventListener('click',()=>setLanguage(lang==='th'?'en':'th'));
+})();
+</script></body></html>
