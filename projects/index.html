@@ -150,6 +150,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(min-width:1101px){.nav .navin>.links{max-width:none!important;gap:14px!important;font-size:13px!important}.nav .navin>.brand{max-width:230px}}
 @media(min-width:761px) and (max-width:1100px){.nav .navin{flex-wrap:wrap!important;justify-content:space-between!important}.nav .navin>.links{position:static!important;transform:none!important;order:3!important;width:100%!important;justify-content:center!important;margin:0 auto!important;gap:20px!important}.nav .navin>.actions{order:2!important}}
 @media(max-width:760px){.nav .navin>.actions{order:2!important;gap:5px}.nav .navin>.actions .btn{font-size:11px;padding:7px 9px}.nav .navin>.actions .lang{font-size:12px;padding:7px 9px}.nav .navin>.links{order:3!important}}
+
+/* High-contrast language switcher across JadeDragon headers */
+.nav .actions #langBtn{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-width:76px!important;min-height:42px!important;padding:8px 13px!important;border:2px solid #2cd6c7!important;border-radius:8px!important;background:#075b55!important;color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:inherit!important;font-size:15px!important;font-weight:800!important;line-height:1.2!important;letter-spacing:.04em!important;box-shadow:0 2px 8px rgba(0,0,0,.18)!important;cursor:pointer!important}
+.nav .actions #langBtn::before{content:"🌐";font-size:17px;line-height:1}
+.nav .actions #langBtn:hover,.nav .actions #langBtn:focus-visible{background:#087e73!important;border-color:#6df5e6!important;outline-offset:3px}
+@media(max-width:760px){.nav .actions #langBtn{min-width:66px!important;min-height:40px!important;padding:7px 9px!important;font-size:14px!important}}
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
