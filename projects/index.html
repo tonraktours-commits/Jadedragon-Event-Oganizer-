@@ -96,12 +96,19 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .project-badge{font-size:10px}
  .meta{font-size:12px;gap:8px 14px}
 }
+
+/* Readable brand descriptor on all device sizes, while retaining the original dragon artwork */
+.nav .brand .jd-logo-stack{display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:100%}
+.nav .brand .jd-logo-subline{display:flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap;color:#f2fcfa;font-size:clamp(9px,1.05vw,12px);font-weight:800;letter-spacing:.055em;line-height:1.35;margin-top:-9px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.nav .brand .jd-logo-subline span:first-child{color:#40e3d3}
+.nav .brand .jd-logo-subline i{width:2px;height:12px;background:#ff9c25;display:block;flex:none}
+@media(max-width:760px){.nav .brand .jd-logo-subline{font-size:9px;gap:3px;margin-top:-6px;letter-spacing:0}.nav .brand .jd-logo-subline i{height:10px}}
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
 <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
 <nav class="nav" aria-label="Main navigation"><div class="wrap navin">
-<a class="brand" href="../index.html#home" aria-label="JadeDragon Group Event & Organizer"><img src="../assets/jadedragon-logo-brand.webp" alt="JadeDragon Group Event & Organizer" width="900" height="593"></a>
+<a class="brand" href="../index.html#home" aria-label="JadeDragon Group Event & Organizer"><span class="jd-logo-stack"><img src="../assets/jadedragon-logo-brand.webp" alt="JadeDragon Group Event & Organizer" width="900" height="593"><span class="jd-logo-subline"><span>GROUP</span><i aria-hidden="true"></i><span>EVENT &amp; ORGANIZER</span></span></span></a>
 <div class="links">
 <a href="../index.html">หน้าแรก</a>
 <a href="index.html" aria-current="page">ผลงาน (โครงการ)</a>
