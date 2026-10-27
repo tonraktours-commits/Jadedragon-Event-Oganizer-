@@ -221,6 +221,31 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .culture-detail-body{padding:0 20px 24px}
 @media(max-width:800px){.portfolio-intro{grid-template-columns:1fr;gap:12px;padding-top:38px}.projects .project{min-height:350px}.culture-details summary{flex-wrap:wrap}.culture-feature{scroll-margin-top:120px}}
 @media(max-width:550px){.projects .project.featured{min-height:410px}.portfolio-intro h2{font-size:1.8rem}.projects .project-copy{padding:22px}.projects .project.featured .project-copy{padding:24px}}
+
+
+/* Surat Health Expo 2569 · verified real-project showcase */
+.projects .health-project-card>img{object-position:center 48%}
+.health-feature{padding:76px 0 84px;background:linear-gradient(145deg,#eef9f6 0%,#fff 62%,#f8f3e8 100%);color:#173c39;scroll-margin-top:160px;overflow:hidden;border-top:1px solid #cfe5df}
+.health-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:50px;align-items:end;margin-bottom:34px}
+.health-feature .eyebrow{color:#087d74}
+.health-feature h2{font-size:clamp(2.2rem,4.4vw,4.5rem);line-height:1.12;letter-spacing:-.035em;color:#075a53;margin:15px 0 18px;max-width:920px}
+.health-feature .lead{color:#476c66;font-size:clamp(1rem,1.35vw,1.16rem);line-height:1.9;margin:0;max-width:780px}
+.health-facts{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.health-facts span{border:1px solid #b9dcd4;background:#fff;border-radius:999px;padding:7px 12px;color:#27685f;font-size:13px}
+.health-source{border-left:3px solid var(--orange);background:rgba(255,255,255,.76);border-radius:0 12px 12px 0;padding:15px 18px;color:#507069;font-size:14px;line-height:1.75}
+.health-source strong{display:block;color:#075a53;font-size:15px;margin-bottom:4px}
+.health-cover{margin:0;border-radius:18px;overflow:hidden;position:relative;aspect-ratio:16/7;background:#dceee9}
+.health-cover img{width:100%;height:100%;object-fit:cover;object-position:center 43%}
+.health-cover figcaption{position:absolute;left:18px;bottom:16px;padding:7px 11px;border-radius:999px;background:rgba(4,42,40,.78);backdrop-filter:blur(8px);font-size:12px;color:#fff}
+.health-details{border-color:#b8d9d2;background:#fff;margin-top:24px}
+.health-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;padding-top:4px}
+.health-gallery figure{margin:0;grid-column:span 4;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#dceee9}
+.health-gallery figure.wide{grid-column:span 8}
+.health-gallery figure.full{grid-column:span 12;aspect-ratio:16/7}
+.health-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.health-gallery figure:hover img{transform:scale(1.025)}
+@media(max-width:900px){.health-feature{padding:62px 0}.health-head{grid-template-columns:1fr;gap:24px}.health-cover{aspect-ratio:16/9}.health-gallery figure,.health-gallery figure.wide{grid-column:span 6}.health-gallery figure.full{grid-column:span 12}}
+@media(max-width:520px){.health-feature{padding:48px 0 54px;scroll-margin-top:120px}.health-feature h2{font-size:clamp(1.9rem,8.4vw,2.6rem);line-height:1.22}.health-facts{gap:7px}.health-facts span{font-size:12px}.health-cover{aspect-ratio:4/3;border-radius:13px}.health-cover figcaption{left:10px;bottom:10px;font-size:11px}.health-gallery{gap:10px}.health-gallery figure,.health-gallery figure.wide,.health-gallery figure.full{grid-column:span 12;aspect-ratio:4/3}}
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
@@ -246,6 +271,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <section class="portfolio-intro wrap" aria-labelledby="portfolio-heading"><div><div class="eyebrow">SELECTED WORKS / REAL PROJECTS</div><h2 id="portfolio-heading">ผลงานจริงที่เล่าเรื่องได้ด้วยภาพ</h2></div><p>เลือกชมประเภทงานและรายละเอียดโครงการจากภาพถ่ายในพื้นที่จริง ตั้งแต่งานประเพณีและนิทรรศการ ไปจนถึงกีฬาและเทศกาล</p></section>
 <section class="wrap projects" id="selected-projects" aria-label="รายชื่อโครงการ">
 <a class="project featured culture-project-card" href="#phra-that-sri-surat-2569"><img src="../assets/projects/phra-that-sri-surat-2569/cover.webp" alt="ขบวนแห่ผ้าห่มพระธาตุศรีสุราษฎร์ ครั้งที่ 16 ภาพผลงานจริง" width="1600" height="1066" fetchpriority="high"><div class="project-copy"><div class="project-top"><span class="project-badge">CULTURE & TRADITION · 2569</span><span class="project-arrow">↗</span></div><h2>พิธีสมโภชผ้าห่มพระธาตุศรีสุราษฎร์ ครั้งที่ 16</h2><p>เรื่องราวความศรัทธาผ่านขบวนแห่ พิธีห่มผ้า การแสดง และบรรยากาศจริงจากพื้นที่จัดงาน</p><div class="meta"><span>ประเพณีและวัฒนธรรม</span><span>เขาท่าเพชร · สุราษฎร์ธานี</span><span>ชมภาพโครงการ</span></div></div></a>
+<a class="project health-project-card" href="#surat-health-expo-2569"><img src="../assets/projects/surat-health-expo-2569/cover.webp" alt="พิธีเปิดมหกรรมสุขภาพดีศรีสุราษฎร์ ประจำปี 2569" width="1600" height="1066" loading="lazy"><div class="project-copy"><div class="project-top"><span class="project-badge">HEALTH & WELLNESS EXPO · 2569</span><span class="project-arrow">↗</span></div><h2>มหกรรมสุขภาพดีศรีสุราษฎร์</h2><p>งานสุขภาพครบวงจรที่เชื่อมพื้นที่จัดแสดง การคัดกรอง เวที กิจกรรม และการแข่งขันไว้ในงานเดียว</p><div class="meta"><span>18–20 สิงหาคม 2569</span><span>เซ็นทรัลสุราษฎร์ธานี</span><span>ชมภาพโครงการ</span></div></div></a>
 <a class="project" href="surat-academic-2025.html">
 <img src="../assets/surat-academic-2025-cover.jpg" alt="พิธีเปิด SURAT ACADEMIC 2025" loading="lazy">
 <div class="project-copy"><div class="project-top"><span class="project-badge">FEATURED PROJECT · 2025</span><span class="project-arrow">↗</span></div><h2>SURAT ACADEMIC 2025</h2><p>งานวิชาการที่เชื่อมเวที การแสดง พื้นที่กิจกรรม นิทรรศการ และการประสานทีมให้เป็นประสบการณ์เดียวกัน</p><div class="meta"><span>งานวิชาการและกิจกรรมองค์กร</span><span>สุราษฎร์ธานี</span><span>ดูรายละเอียดและภาพโครงการ</span></div></div>
@@ -295,6 +321,33 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <figure><img src="../assets/projects/phra-that-sri-surat-2569/audience-wide.webp" alt="ภาพรวมผู้ร่วมงานและระบบแสงในพื้นที่พิธี" width="1800" height="1200" loading="lazy"></figure>
 </div>
 </div></details></div>
+</section>
+
+<section class="health-feature" id="surat-health-expo-2569" aria-labelledby="health-project-title">
+<div class="wrap">
+<div class="health-head">
+<div>
+<div class="eyebrow">HEALTH & WELLNESS EXPO · 2569</div>
+<h2 id="health-project-title" data-th="มหกรรมสุขภาพดีศรีสุราษฎร์" data-en="Surat Thani Healthy Living Expo">มหกรรมสุขภาพดีศรีสุราษฎร์</h2>
+<p class="lead" data-th="มหกรรมสุขภาพครบวงจรที่รวมการตรวจคัดกรองสุขภาพฟรี 8 รายการ บูธวิชาการและนวัตกรรมสุขภาพ สินค้า OTOP เวิร์กชอป ทอล์ก และกิจกรรมการแข่งขันตลอด 3 วันไว้ในพื้นที่เดียว" data-en="A three-day healthy living expo bringing together eight free health screening services, health innovation exhibits, wellness OTOP products, workshops, talks and public competitions.">มหกรรมสุขภาพครบวงจรที่รวมการตรวจคัดกรองสุขภาพฟรี 8 รายการ บูธวิชาการและนวัตกรรมสุขภาพ สินค้า OTOP เวิร์กชอป ทอล์ก และกิจกรรมการแข่งขันตลอด 3 วันไว้ในพื้นที่เดียว</p>
+<div class="health-facts"><span data-th="18–20 สิงหาคม 2569" data-en="18–20 August 2026">18–20 สิงหาคม 2569</span><span data-th="เซ็นทรัลสุราษฎร์ธานี" data-en="Central Surat Thani">เซ็นทรัลสุราษฎร์ธานี</span><span data-th="สุขภาพ · นิทรรศการ · กิจกรรม" data-en="Health · Exhibition · Activities">สุขภาพ · นิทรรศการ · กิจกรรม</span></div>
+</div>
+<div class="health-source"><strong data-th="ข้อมูลที่ตรวจสอบจากโพสต์ผลงานจริง" data-en="Verified from the published project post">ข้อมูลที่ตรวจสอบจากโพสต์ผลงานจริง</strong><span data-th="จัดโดยองค์การบริหารส่วนจังหวัดสุราษฎร์ธานี · ลานโปรโมชั่น ชั้น 1 และสุราษฎร์ธานี ฮอลล์ ชั้น 4" data-en="Organized by the Surat Thani Provincial Administrative Organization · Promotion area, Level 1 and Surat Thani Hall, Level 4">จัดโดยองค์การบริหารส่วนจังหวัดสุราษฎร์ธานี · ลานโปรโมชั่น ชั้น 1 และสุราษฎร์ธานี ฮอลล์ ชั้น 4</span></div>
+</div>
+<figure class="health-cover"><img src="../assets/projects/surat-health-expo-2569/venue-overview.webp" alt="ภาพรวมพื้นที่มหกรรมสุขภาพดีศรีสุราษฎร์ภายในศูนย์การค้าเซ็นทรัลสุราษฎร์ธานี" width="1600" height="1066" loading="lazy"><figcaption data-th="พื้นที่จัดงานจริง · เซ็นทรัลสุราษฎร์ธานี" data-en="Real event venue · Central Surat Thani">พื้นที่จัดงานจริง · เซ็นทรัลสุราษฎร์ธานี</figcaption></figure>
+<details class="culture-details health-details"><summary>ชมแกลเลอรีภาพจริงจากโครงการ <span>8 ภาพ · พื้นที่สุขภาพ เวที กิจกรรม และการแข่งขัน ↗</span></summary><div class="culture-detail-body">
+<div class="health-gallery" aria-label="ภาพผลงานมหกรรมสุขภาพดีศรีสุราษฎร์">
+<figure class="wide"><img src="../assets/projects/surat-health-expo-2569/cover.webp" alt="พิธีเปิดมหกรรมสุขภาพดีศรีสุราษฎร์บนเวทีหลัก" width="1600" height="1066" loading="lazy"></figure>
+<figure><img src="../assets/projects/surat-health-expo-2569/screening-area.webp" alt="พื้นที่ตรวจคัดกรองสุขภาพและบูธบริการสุขภาพ" width="1600" height="1066" loading="lazy"></figure>
+<figure><img src="../assets/projects/surat-health-expo-2569/dance-contest.webp" alt="การแข่งขันเต้นจังหวะบาสโลบภายในงาน" width="1600" height="1069" loading="lazy"></figure>
+<figure><img src="../assets/projects/surat-health-expo-2569/healthy-food-contest.webp" alt="พื้นที่การแข่งขันประกวดอาหารเพื่อสุขภาพ" width="1600" height="1067" loading="lazy"></figure>
+<figure><img src="../assets/projects/surat-health-expo-2569/healthy-cooking.webp" alt="ผู้เข้าแข่งขันสาธิตการทำอาหารเพื่อสุขภาพ" width="1600" height="1067" loading="lazy"></figure>
+<figure class="wide"><img src="../assets/projects/surat-health-expo-2569/exercise-activity.webp" alt="กิจกรรมออกกำลังกายร่วมกันภายในงาน" width="960" height="640" loading="lazy"></figure>
+<figure><img src="../assets/projects/surat-health-expo-2569/fitness-stage.webp" alt="กิจกรรมสุขภาพและการออกกำลังกายหน้าเวที" width="1600" height="1067" loading="lazy"></figure>
+<figure class="full"><img src="../assets/projects/surat-health-expo-2569/wellness-booth.webp" alt="พื้นที่จัดแสดงแนวคิดสุขภาพดีและสมดุลชีวิต" width="1600" height="1066" loading="lazy"></figure>
+</div>
+</div></details>
+</div>
 </section>
 
 <section class="cta"><div class="wrap cta-in"><div><h2>มีโครงการที่อยากให้เราร่วมสร้างไหม</h2><p>ส่งประเภทงาน วันที่ สถานที่ งบประมาณ และข้อมูลติดต่อให้ทีมช่วยประเมินเบื้องต้น</p></div><a class="btn" href="../contact.html#brief">เริ่มขอใบเสนอราคา ↗</a></div></section>
