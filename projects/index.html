@@ -200,6 +200,27 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .projects .hatyai-art:after{content:"";position:absolute;width:290px;height:290px;border:48px solid rgba(95,233,204,.09);border-radius:50%;top:-110px;right:-80px}
 .projects .hatyai-art span{font-weight:900;line-height:1.0;font-size:clamp(37px,5vw,67px);letter-spacing:-.045em}
 .projects .hatyai-art small{font-weight:700;letter-spacing:.17em;font-size:11px;margin-top:12px;color:#98f0dc}
+
+/* Portfolio refresh: curated real-project thumbnails and an accessible expandable gallery */
+.portfolio-intro{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:34px;padding-top:64px}
+.portfolio-intro h2{color:#075650;font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.2;margin:12px 0 0}
+.portfolio-intro p{font-size:16px;color:#526f69;margin:0}
+.projects{padding-top:28px;gap:22px}
+.projects .project{min-height:390px;border-radius:18px}
+.projects .project.featured{min-height:490px}
+.projects .culture-project-card h2{max-width:750px}
+.projects .project:after{background:linear-gradient(180deg,rgba(2,31,29,.02) 12%,rgba(3,36,34,.42) 49%,rgba(3,33,32,.97) 100%)}
+.projects .project:focus-visible,.culture-details summary:focus-visible{outline:3px solid #ff8c24;outline-offset:4px}
+.culture-feature{scroll-margin-top:160px}
+.culture-details{margin:24px 0 48px;border:1px solid #b4dbd1;border-radius:14px;background:#fff;overflow:hidden}
+.culture-details summary{list-style:none;cursor:pointer;padding:20px 24px;color:#075b55;font-weight:800;display:flex;justify-content:space-between;gap:15px;align-items:center}
+.culture-details summary::-webkit-details-marker{display:none}
+.culture-details summary:before{content:"+";margin-right:10px;color:#009688;font-size:23px}
+.culture-details[open] summary:before{content:"−"}
+.culture-details summary span{font-size:13px;font-weight:600;color:#537a71}
+.culture-detail-body{padding:0 20px 24px}
+@media(max-width:800px){.portfolio-intro{grid-template-columns:1fr;gap:12px;padding-top:38px}.projects .project{min-height:350px}.culture-details summary{flex-wrap:wrap}.culture-feature{scroll-margin-top:120px}}
+@media(max-width:550px){.projects .project.featured{min-height:410px}.portfolio-intro h2{font-size:1.8rem}.projects .project-copy{padding:22px}.projects .project.featured .project-copy{padding:24px}}
 </style>
 <link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
 <body>
@@ -217,11 +238,28 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header class="hero"><div class="wrap">
 <div class="eyebrow">OUR PROJECTS / JADEDRAGON</div>
 <h1>ผลงานที่เราได้ร่วมสร้าง<br><span>จากแนวคิดสู่ประสบการณ์จริง</span></h1>
-<p>รวมโครงการที่ทีม Jadedragon ได้ออกแบบ วางแผน ประสานงาน และผลิตหน้างาน แต่ละโครงการนำเสนอด้วยภาพจริงและข้อมูลสำคัญเพื่อให้เห็นกระบวนการและผลลัพธ์อย่างชัดเจน</p>
+<p>รวมผลงานการจัดงานอีเวนต์ นิทรรศการ ประเพณี กีฬา และเทศกาลของ JadeDragon Event & Organizer ผ่านภาพถ่ายจากงานจริง พร้อมรายละเอียดที่ช่วยให้เห็นรูปแบบงานและประสบการณ์ของทีม</p>
 
 </div></header>
 
 
+<section class="portfolio-intro wrap" aria-labelledby="portfolio-heading"><div><div class="eyebrow">SELECTED WORKS / REAL PROJECTS</div><h2 id="portfolio-heading">ผลงานจริงที่เล่าเรื่องได้ด้วยภาพ</h2></div><p>เลือกชมประเภทงานและรายละเอียดโครงการจากภาพถ่ายในพื้นที่จริง ตั้งแต่งานประเพณีและนิทรรศการ ไปจนถึงกีฬาและเทศกาล</p></section>
+<section class="wrap projects" id="selected-projects" aria-label="รายชื่อโครงการ">
+<a class="project featured culture-project-card" href="#phra-that-sri-surat-2569"><img src="../assets/projects/phra-that-sri-surat-2569/cover.webp" alt="ขบวนแห่ผ้าห่มพระธาตุศรีสุราษฎร์ ครั้งที่ 16 ภาพผลงานจริง" width="1600" height="1066" fetchpriority="high"><div class="project-copy"><div class="project-top"><span class="project-badge">CULTURE & TRADITION · 2569</span><span class="project-arrow">↗</span></div><h2>พิธีสมโภชผ้าห่มพระธาตุศรีสุราษฎร์ ครั้งที่ 16</h2><p>เรื่องราวความศรัทธาผ่านขบวนแห่ พิธีห่มผ้า การแสดง และบรรยากาศจริงจากพื้นที่จัดงาน</p><div class="meta"><span>ประเพณีและวัฒนธรรม</span><span>เขาท่าเพชร · สุราษฎร์ธานี</span><span>ชมภาพโครงการ</span></div></div></a>
+<a class="project" href="surat-academic-2025.html">
+<img src="../assets/surat-academic-2025-cover.jpg" alt="พิธีเปิด SURAT ACADEMIC 2025" loading="lazy">
+<div class="project-copy"><div class="project-top"><span class="project-badge">FEATURED PROJECT · 2025</span><span class="project-arrow">↗</span></div><h2>SURAT ACADEMIC 2025</h2><p>งานวิชาการที่เชื่อมเวที การแสดง พื้นที่กิจกรรม นิทรรศการ และการประสานทีมให้เป็นประสบการณ์เดียวกัน</p><div class="meta"><span>งานวิชาการและกิจกรรมองค์กร</span><span>สุราษฎร์ธานี</span><span>ดูรายละเอียดและภาพโครงการ</span></div></div>
+</a>
+<a class="project hatyai-project" href="hi-roy-hatyai-2026.html" aria-label="ดูรายละเอียด Hi หรอย Hatyai Chicken Heart Beat Run"><div class="hatyai-art" aria-hidden="true"><span>HI หรอย<br>HATYAI</span><small>CHICKEN HEART BEAT RUN · 2026</small></div><div class="project-copy"><div class="project-top"><span class="project-badge">SPORTS & TOURISM · 2026</span><span class="project-arrow">↗</span></div><h2>HI หรอย HATYAI</h2><p>Chicken Heart Beat Run — กิจกรรมวิ่ง Fun Run ระยะ 5 กม. ท่ามกลางบรรยากาศเทศกาลท่องเที่ยวในเมืองหาดใหญ่</p><div class="meta"><span>14 กุมภาพันธ์ 2569</span><span>อำเภอหาดใหญ่ จังหวัดสงขลา</span><span>ชมข้อมูลโครงการ</span></div></div></a>
+<a class="project" href="surat-pride-run-2025.html">
+<img src="../assets/recovered/4957f49add68b3d5b161.jpg" alt="บรรยากาศปล่อยตัวนักวิ่ง SURAT PRIDE RUN 2025" loading="lazy">
+<div class="project-copy"><div class="project-top"><span class="project-badge">PROJECT · 2025</span><span class="project-arrow">↗</span></div><h2>SURAT PRIDE RUN 2025</h2><p>กิจกรรมวิ่งที่รวมจุดปล่อยตัว วอร์มอัพ เวที และการสนับสนุนผู้ร่วมงานในพื้นที่เดียวกัน</p><div class="meta"><span>22 มิถุนายน 2568</span><span>เซ็นทรัล สุราษฎร์ธานี</span></div></div>
+</a>
+<a class="project" href="surat-music-fest.html">
+<img src="../assets/recovered/46ef4d17103afe89364b.jpg" alt="Surat Music Fest บอลลูนและบรรยากาศยามค่ำคืน" loading="lazy">
+<div class="project-copy"><div class="project-top"><span class="project-badge">PROJECT · FESTIVAL</span><span class="project-arrow">↗</span></div><h2>SURAT MUSIC FEST</h2><p>เทศกาลที่ถ่ายทอดประสบการณ์ผ่านเวที ดนตรี บอลลูน มุมถ่ายภาพ แสงสี และบรรยากาศยามค่ำคืน</p><div class="meta"><span>เทศกาลและการท่องเที่ยว</span><span>ดูรายละเอียดและภาพโครงการ</span></div></div>
+</a>
+</section>
 <section class="culture-feature" id="phra-that-sri-surat-2569" aria-labelledby="culture-project-title">
 <div class="wrap">
 <div class="culture-head">
@@ -234,7 +272,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="culture-source"><strong data-th="ข้อมูลที่ตรวจสอบจากโพสต์ผลงานจริง" data-en="Verified from the published project post">ข้อมูลที่ตรวจสอบจากโพสต์ผลงานจริง</strong><span data-th="ขอบคุณองค์การบริหารส่วนจังหวัดสุราษฎร์ธานี · จัดโดย JadeDragon Event Organizer" data-en="With thanks to the Surat Thani Provincial Administrative Organization · Organized by JadeDragon Event Organizer">ขอบคุณองค์การบริหารส่วนจังหวัดสุราษฎร์ธานี · จัดโดย JadeDragon Event Organizer</span><br><a href="https://www.facebook.com/media/set/?set=a.695240983515313&type=3" target="_blank" rel="noopener" data-th="ดูอัลบั้มต้นฉบับบน Facebook ↗" data-en="View original Facebook album ↗">ดูอัลบั้มต้นฉบับบน Facebook ↗</a></div>
 </div>
 <figure class="culture-cover"><img src="../assets/projects/phra-that-sri-surat-2569/cover.webp" alt="ขบวนแห่ผ้าห่มพระธาตุศรีสุราษฎร์และธรรมชาติเขาท่าเพชร ครั้งที่ 16" width="1600" height="1066" fetchpriority="high"><figcaption data-th="ขบวนแห่ผ้าห่มพระธาตุศรีสุราษฎร์ · ภาพจริงจากพื้นที่จัดงาน" data-en="Phra That Si Surat sacred cloth procession · On-site photography">ขบวนแห่ผ้าห่มพระธาตุศรีสุราษฎร์ · ภาพจริงจากพื้นที่จัดงาน</figcaption></figure>
-<div class="culture-chapter"><h3 data-th="ขบวนแห่และพิธีห่มพระธาตุ" data-en="Sacred Cloth Procession & Wrapping Ceremony">ขบวนแห่และพิธีห่มพระธาตุ</h3><span>01 / DAY CEREMONY</span></div>
+<details class="culture-details"><summary>ชมแกลเลอรีภาพจริงจากโครงการ <span>16 ภาพ · ขบวนแห่ พิธีการ และการแสดง ↗</span></summary><div class="culture-detail-body"><div class="culture-chapter"><h3 data-th="ขบวนแห่และพิธีห่มพระธาตุ" data-en="Sacred Cloth Procession & Wrapping Ceremony">ขบวนแห่และพิธีห่มพระธาตุ</h3><span>01 / DAY CEREMONY</span></div>
 <div class="culture-gallery day-gallery" aria-label="ภาพขบวนแห่และพิธีห่มพระธาตุศรีสุราษฎร์">
 <figure class="wide"><img src="../assets/projects/phra-that-sri-surat-2569/cloth-procession.webp" alt="ผู้ร่วมขบวนแห่ผ้าห่มพระธาตุในเขตเมืองสุราษฎร์ธานี" width="1600" height="1066" loading="lazy"></figure>
 <figure class="portrait"><img src="../assets/projects/phra-that-sri-surat-2569/city-procession.webp" alt="ขบวนผ้าห่มพระธาตุทอดยาวบนถนนในเมืองสุราษฎร์ธานี" width="1200" height="1800" loading="lazy"></figure>
@@ -256,34 +294,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <figure><img src="../assets/projects/phra-that-sri-surat-2569/performance.webp" alt="การแสดงศิลปวัฒนธรรมหน้าองค์พระธาตุ" width="1800" height="1200" loading="lazy"></figure>
 <figure><img src="../assets/projects/phra-that-sri-surat-2569/audience-wide.webp" alt="ภาพรวมผู้ร่วมงานและระบบแสงในพื้นที่พิธี" width="1800" height="1200" loading="lazy"></figure>
 </div>
-</div>
+</div></details></div>
 </section>
 
-<section class="wrap projects" aria-label="รายชื่อโครงการ">
-<a class="project featured" href="surat-academic-2025.html">
-<img src="../assets/surat-academic-2025-cover.jpg" alt="พิธีเปิด SURAT ACADEMIC 2025" fetchpriority="high">
-<div class="project-copy"><div class="project-top"><span class="project-badge">FEATURED PROJECT · 2025</span><span class="project-arrow">↗</span></div><h2>SURAT ACADEMIC 2025</h2><p>งานวิชาการที่เชื่อมเวที การแสดง พื้นที่กิจกรรม นิทรรศการ และการประสานทีมให้เป็นประสบการณ์เดียวกัน</p><div class="meta"><span>งานวิชาการและกิจกรรมองค์กร</span><span>สุราษฎร์ธานี</span><span>ดูรายละเอียดและภาพโครงการ</span></div></div>
-</a>
-<a class="project hatyai-project" href="hi-roy-hatyai-2026.html" aria-label="ดูรายละเอียด Hi หรอย Hatyai Chicken Heart Beat Run"><div class="hatyai-art" aria-hidden="true"><span>HI หรอย<br>HATYAI</span><small>CHICKEN HEART BEAT RUN · 2026</small></div><div class="project-copy"><div class="project-top"><span class="project-badge">SPORTS & TOURISM · 2026</span><span class="project-arrow">↗</span></div><h2>HI หรอย HATYAI</h2><p>Chicken Heart Beat Run — กิจกรรมวิ่ง Fun Run ระยะ 5 กม. ท่ามกลางบรรยากาศเทศกาลท่องเที่ยวในเมืองหาดใหญ่</p><div class="meta"><span>14 กุมภาพันธ์ 2569</span><span>อำเภอหาดใหญ่ จังหวัดสงขลา</span><span>ชมข้อมูลโครงการ</span></div></div></a>
-<a class="project" href="surat-pride-run-2025.html">
-<img src="../assets/recovered/4957f49add68b3d5b161.jpg" alt="บรรยากาศปล่อยตัวนักวิ่ง SURAT PRIDE RUN 2025" loading="lazy">
-<div class="project-copy"><div class="project-top"><span class="project-badge">PROJECT · 2025</span><span class="project-arrow">↗</span></div><h2>SURAT PRIDE RUN 2025</h2><p>กิจกรรมวิ่งที่รวมจุดปล่อยตัว วอร์มอัพ เวที และการสนับสนุนผู้ร่วมงานในพื้นที่เดียวกัน</p><div class="meta"><span>22 มิถุนายน 2568</span><span>เซ็นทรัล สุราษฎร์ธานี</span></div></div>
-</a>
-<a class="project" href="surat-music-fest.html">
-<img src="../assets/recovered/46ef4d17103afe89364b.jpg" alt="Surat Music Fest บอลลูนและบรรยากาศยามค่ำคืน" loading="lazy">
-<div class="project-copy"><div class="project-top"><span class="project-badge">PROJECT · FESTIVAL</span><span class="project-arrow">↗</span></div><h2>SURAT MUSIC FEST</h2><p>เทศกาลที่ถ่ายทอดประสบการณ์ผ่านเวที ดนตรี บอลลูน มุมถ่ายภาพ แสงสี และบรรยากาศยามค่ำคืน</p><div class="meta"><span>เทศกาลและการท่องเที่ยว</span><span>ดูรายละเอียดและภาพโครงการ</span></div></div>
-</a>
-</section>
-<section class="hatyai-showcase" id="hi-hroi-hatyai" aria-labelledby="hatyai-title"><div class="wrap hatyai-layout"><div class="hatyai-text"><div class="eyebrow">REAL PROJECT / SPORTS EVENT · 2026</div><h2 id="hatyai-title">Hi หรอย Hatyai<br><span>Chicken Heart Beat Run</span></h2><p>กิจกรรมวิ่ง Fun Run ระยะทาง 5 กิโลเมตร ร่วมสร้างบรรยากาศวันวาเลนไทน์ให้เต็มไปด้วยความสนุกและพลังของผู้เข้าร่วมงาน</p><div class="hatyai-facts"><span>14 กุมภาพันธ์ 2569</span><span>หน้าศูนย์การค้าโอเดียน อ.หาดใหญ่ จ.สงขลา</span><span>FUN RUN 5 KM</span></div><a class="btn hatyai-link" href="https://www.facebook.com/media/set/?set=a.695240983515313&amp;type=3" target="_blank" rel="noopener noreferrer" aria-label="เปิดอัลบั้มภาพกิจกรรมบน Facebook">ชมอัลบั้มภาพต้นฉบับบน Facebook ↗</a></div><div class="hatyai-visual" role="img" aria-label="พื้นที่กราฟิกสรุปกิจกรรม Hi หรอย Hatyai Chicken Heart Beat Run"><div class="hatyai-outline">HI หรอย<br>HATYAI</div><span class="hatyai-distance">5 KM</span><strong>CHICKEN HEART<br>BEAT RUN</strong><small>14 FEB 2026 · HAT YAI</small></div></div></section>
-<section class="detail-guide"><div class="wrap">
-<div class="guide-head"><div><div class="eyebrow">INSIDE EACH PROJECT</div><h2>ข้อมูลที่ลูกค้าจะเห็น<br>ในทุกหน้าโครงการ</h2></div><p>วางโครงสร้างให้แต่ละโครงการเล่าเรื่องได้ครบ แต่ยังอ่านง่ายและเน้นภาพจริง โดยข้อมูลที่ยังไม่ได้รับการยืนยันจะไม่ถูกสร้างขึ้นเอง</p></div>
-<div class="guide-grid">
-<div class="guide-card"><b>01</b><strong>ที่มาและวัตถุประสงค์</strong><span>เหตุผลของโครงการและเป้าหมายที่ต้องการสร้าง</span></div>
-<div class="guide-card"><b>02</b><strong>ข้อมูลการจัดงาน</strong><span>วันที่ สถานที่ และหน่วยงานเจ้าภาพ</span></div>
-<div class="guide-card"><b>03</b><strong>ขอบเขตการทำงาน</strong><span>บทบาทของทีมและองค์ประกอบที่รับผิดชอบ</span></div>
-<div class="guide-card"><b>04</b><strong>ภาพจากโครงการ</strong><span>ภาพปกและแกลเลอรีจากพื้นที่จริง</span></div>
-</div></div></section>
-<section class="cta"><div class="wrap cta-in"><div><h2>มีโครงการที่อยากให้เราร่วมสร้างไหมครับ</h2><p>ส่งประเภทงาน วันที่ สถานที่ งบประมาณ และข้อมูลติดต่อให้ทีมช่วยประเมินเบื้องต้น</p></div><a class="btn" href="../index.html#brief">เริ่มขอใบเสนอราคา ↗</a></div></section>
+<section class="cta"><div class="wrap cta-in"><div><h2>มีโครงการที่อยากให้เราร่วมสร้างไหม</h2><p>ส่งประเภทงาน วันที่ สถานที่ งบประมาณ และข้อมูลติดต่อให้ทีมช่วยประเมินเบื้องต้น</p></div><a class="btn" href="../contact.html#brief">เริ่มขอใบเสนอราคา ↗</a></div></section>
 </main>
 <footer><div class="wrap footer"><span>© 2026 Jadedragon Event Organizer</span><a href="../index.html#contact">ติดต่อทีมงาน ↗</a></div></footer>
 <script>
