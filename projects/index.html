@@ -260,7 +260,24 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .press-feature .health-details{border-color:#32708a;background:#fff}
 
 </style>
-<link rel="stylesheet" href="../assets/jadedragon-cinematic.css"></head>
+<link rel="stylesheet" href="../assets/jadedragon-cinematic.css">
+<style>
+/* Final page-level contrast fixes. The shared cinematic theme loads above, so
+   these rules intentionally win without relying on !important everywhere. */
+.portfolio-intro h2{color:#f6fcfc}
+.portfolio-intro p{color:#c9dcda}
+.portfolio-intro .eyebrow{color:#4fe0d5!important}
+.nav .brand img{filter:brightness(1.28) saturate(1.12) drop-shadow(0 4px 14px rgba(29,221,208,.14))}
+.projects .project-copy h2{color:#fff}
+.projects .project-copy p{color:#e2efeb}
+.projects .project-badge{color:#fff}
+@media(max-width:760px){
+  .portfolio-intro{padding-top:42px}
+  .portfolio-intro h2{font-size:clamp(1.75rem,8vw,2.35rem);line-height:1.25}
+  .portfolio-intro p{font-size:.98rem;line-height:1.8}
+  .nav .brand img{filter:brightness(1.38) saturate(1.12) drop-shadow(0 3px 10px rgba(29,221,208,.16))}
+}
+</style></head>
 <body>
 <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
 <nav class="nav" aria-label="Main navigation"><div class="wrap navin">
